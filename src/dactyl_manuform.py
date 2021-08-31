@@ -1981,6 +1981,44 @@ def pcb_usb_hole():
     )
     return shape
 
+pcb_holder_position = key_position(
+    list(np.array(wall_locate2(-2, 1)) + np.array([2.7, (mount_height / 1), 3])), 1, 0.5
+)
+
+pcb_holder_size = [34.6, 7, 3]
+pcb_holder_thickness = 4
+
+def pcb_holder():
+    debugprint('pcb_holder()')
+    shape = box(*pcb_holder_size)
+    shape = translate(shape,
+        (
+            pcb_holder_position[0],
+            pcb_holder_position[1],
+            0,
+        )
+    )
+    return shape
+
+wall_thinner_position = key_position(
+    list(np.array(wall_locate2(-2, 1.5)) + np.array([2.5, (mount_height / 1), 3])), 1, 0.5
+)
+
+wall_thinner_size = [34, 7, 10]
+wall_thinner_thickness = 4
+
+def wall_thinner():
+    debugprint('wall_thinner()')
+    shape = box(*wall_thinner_size)
+    shape = translate(shape,
+        (
+            wall_thinner_position[0],
+            wall_thinner_position[1],
+            6.5,
+        )
+    )
+    return shape
+
 trrs_position = key_position(
     list(np.array(wall_locate3(0, 1)) + np.array([0, (mount_height / 2), 0])), 0, 0
 )
@@ -1997,6 +2035,26 @@ def trrs_hole():
             trrs_position[0],
             trrs_position[1],
             (trrs_hole_size[2] + trrs_thickness) / 4,
+        )
+    )
+    return shape
+
+pcb_screw_position = key_position(
+    list(np.array(wall_locate3(1, 0)) + np.array([4, (mount_height / 2), -1])), 0, 0
+)
+
+pcb_screw_hole_size = [1, 4, 35]
+pcb_screw_thickness = 1
+
+def pcb_screw_hole():
+    debugprint('pcb_screw_hole()')
+    shape = cylinder(*pcb_screw_hole_size)
+    #shape = rotate(shape, [90, 0, 0])
+    shape = translate(shape,
+        (
+            -34,
+            pcb_screw_position[1],
+            3,
         )
     )
     return shape
@@ -2530,6 +2588,9 @@ def model_side(side="right"):
     if controller_mount_type in ['PCB_MOUNT']:
         s2 = difference(s2, [pcb_usb_hole()])
         s2 = difference(s2, [trrs_hole()])
+        #s2 = difference(s2, [pcb_screw_hole()])
+        s2 = union([s2, pcb_holder()])
+        s2 = difference(s2, [wall_thinner()])
 
     if controller_mount_type in ['None']:
         0 # do nothing, only here to expressly state inaction.
