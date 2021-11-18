@@ -219,6 +219,28 @@ shape_config = {
     'external_holder_width':  28.75,
     'external_holder_xoffset': -5.0,
 
+    ###################################
+    ## PCB Screw Mount               ##
+    ###################################
+    "pcb_mount_ref_offset": [1, -5, 0],
+    "pcb_holder_size": [34.6, 0, 3],
+    "pcb_holder_offset": [9.9, 3, 0],
+
+    "pcb_usb_hole_size": [9.3, 10.0, 4.5],
+    "pcb_usb_hole_offset": [16, 0, 4.5],
+    "pcb_usb_hole_z_offset": 2.5,
+
+    "wall_thinner_size": [33, 5, 10],
+
+    "trrs_hole_size": [3, 20],
+    #right
+    #"trrs_offset": [2, 0, 7],
+    #left
+    "trrs_offset": [0, 0, 7],
+
+    "pcb_screw_hole_size": [.7, 10],
+    "pcb_screw_x_offsets": [- 4.5, 8.75, 23], # for the screw positions off of reference
+    "pcb_screw_y_offset": 1,
 
     # Offset is from the top inner corner of the top inner key.
 

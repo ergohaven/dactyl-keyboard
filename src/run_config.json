@@ -181,6 +181,56 @@
     "external_holder_height": 12.5,
     "external_holder_width": 28.75,
     "external_holder_xoffset": -5.0,
+    "pcb_mount_ref_offset": [
+        1,
+        -5,
+        0
+    ],
+    "pcb_holder_size": [
+        34.6,
+        0,
+        3
+    ],
+    "pcb_holder_offset": [
+        9.9,
+        3,
+        0
+    ],
+    "pcb_usb_hole_size": [
+        9.3,
+        10.0,
+        4.5
+    ],
+    "pcb_usb_hole_offset": [
+        16,
+        0,
+        4.5
+    ],
+    "pcb_usb_hole_z_offset": 2.5,
+    "wall_thinner_size": [
+        33,
+        5,
+        10
+    ],
+    "trrs_hole_size": [
+        3,
+        20
+    ],
+    "trrs_offset": [
+        0,
+        0,
+        7
+    ],
+    "pcb_screw_hole_size": [
+        0.7,
+        10
+    ],
+    "pcb_screw_x_offsets": [
+        -4.5,
+        8.75,
+        23
+    ],
+    "pcb_screw_y_offset": 1,
     "screw_hole_diameter": 2,
     "base_thickness": 3.0,
     "base_offset": 3.0,

@@ -1,8 +1,10 @@
 import numpy as np
 from numpy import pi
 import os.path as path
+import getopt, sys
 import json
 import os
+import copy
 
 from scipy.spatial import ConvexHull as sphull
 
@@ -1962,31 +1964,37 @@ def external_mount_hole():
     )
     return shape
 
-pcb_usb_position = key_position(
-    list(np.array(wall_locate2(0, 1)) + np.array([0, (mount_height / 2), 0])), 1, 0
+pcb_mount_ref_position = key_position(
+    #TRRS POSITION IS REFERENCE BY CONVENIENCE
+    list(np.array(wall_locate3(0, 1)) + np.array([0, (mount_height / 2), 0])), 0, 0
 )
 
-pcb_usb_hole_size = [7.5, 10.0, 4]
-pcb_holder_thickness = 4
+pcb_mount_ref_position[0] = pcb_mount_ref_position[0] + pcb_mount_ref_offset[0]
+pcb_mount_ref_position[1] = pcb_mount_ref_position[1] + pcb_mount_ref_offset[1]
+pcb_mount_ref_position[2] = 0.0 + pcb_mount_ref_offset[2]
 
 def pcb_usb_hole():
     debugprint('pcb_holder()')
+    pcb_usb_position = copy.deepcopy(pcb_mount_ref_position)
+    pcb_usb_position[0] = pcb_usb_position[0] + pcb_usb_hole_offset[0]
+    pcb_usb_position[1] = pcb_usb_position[1] + pcb_usb_hole_offset[1]
+    pcb_usb_position[2] = pcb_usb_position[2] + pcb_usb_hole_offset[2]
+
     shape = box(*pcb_usb_hole_size)
     shape = translate(shape,
         (
             pcb_usb_position[0],
             pcb_usb_position[1],
-            (pcb_usb_hole_size[2] + usb_holder_thickness) / 1,
+            pcb_usb_hole_size[2] / 2 + pcb_usb_hole_z_offset + usb_holder_thickness,
         )
     )
     return shape
 
-pcb_holder_position = key_position(
-    list(np.array(wall_locate2(-2, 1)) + np.array([2.7, (mount_height / 1), 3])), 1, 0.5
-)
-
-pcb_holder_size = [34.6, 7, 3]
-pcb_holder_thickness = 4
+pcb_holder_position = copy.deepcopy(pcb_mount_ref_position)
+pcb_holder_position[0] = pcb_holder_position[0] + pcb_holder_offset[0]
+pcb_holder_position[1] = pcb_holder_position[1] + pcb_holder_offset[1]
+pcb_holder_position[2] = pcb_holder_position[2] + pcb_holder_offset[2]
+pcb_holder_thickness = pcb_holder_size[2]
 
 def pcb_holder():
     debugprint('pcb_holder()')
@@ -1994,70 +2002,63 @@ def pcb_holder():
     shape = translate(shape,
         (
             pcb_holder_position[0],
-            pcb_holder_position[1],
-            0,
+            pcb_holder_position[1] - pcb_holder_size[1] / 2,
+            pcb_holder_thickness / 2,
         )
     )
     return shape
 
-wall_thinner_position = key_position(
-    list(np.array(wall_locate2(-2, 1.5)) + np.array([2.5, (mount_height / 1), 3])), 1, 0.5
-)
-
-wall_thinner_size = [34, 7, 10]
-wall_thinner_thickness = 4
 
 def wall_thinner():
     debugprint('wall_thinner()')
     shape = box(*wall_thinner_size)
     shape = translate(shape,
         (
-            wall_thinner_position[0],
-            wall_thinner_position[1],
-            6.5,
+            pcb_holder_position[0],
+            pcb_holder_position[1] - wall_thinner_size[1]/2,
+            wall_thinner_size[2]/2 + pcb_holder_thickness,
         )
     )
     return shape
 
-trrs_position = key_position(
-    list(np.array(wall_locate3(0, 1)) + np.array([0, (mount_height / 2), 0])), 0, 0
-)
 
-trrs_hole_size = [3, 20, 20]
-trrs_thickness = 4
+
 
 def trrs_hole():
     debugprint('trrs_hole()')
+    trrs_position = copy.deepcopy(pcb_mount_ref_position)
+    trrs_position[0] = trrs_position[0] + trrs_offset[0]
+    trrs_position[1] = trrs_position[1] + trrs_offset[1]
+    trrs_position[2] = trrs_position[2] + trrs_offset[2]
+
+    trrs_hole_size = [2.7, 20]
+
+
     shape = cylinder(*trrs_hole_size)
     shape = rotate(shape, [0, 90, 90])
     shape = translate(shape,
         (
             trrs_position[0],
             trrs_position[1],
-            (trrs_hole_size[2] + trrs_thickness) / 4,
+            trrs_position[2],
         )
     )
     return shape
 
-pcb_screw_position = key_position(
-    list(np.array(wall_locate3(1, 0)) + np.array([4, (mount_height / 2), -1])), 0, 0
-)
-
-pcb_screw_hole_size = [1, 4, 35]
-pcb_screw_thickness = 1
+pcb_screw_position = copy.deepcopy(pcb_mount_ref_position)
+pcb_screw_position[1] = pcb_screw_position[1] + pcb_screw_y_offset
 
 def pcb_screw_hole():
     debugprint('pcb_screw_hole()')
-    shape = cylinder(*pcb_screw_hole_size)
-    #shape = rotate(shape, [90, 0, 0])
-    shape = translate(shape,
-        (
-            -34,
-            pcb_screw_position[1],
-            3,
-        )
-    )
-    return shape
+    holes = []
+    hole = cylinder(*pcb_screw_hole_size)
+    hole = translate(hole, pcb_screw_position)
+    hole = translate(hole, (0, 0, pcb_screw_hole_size[1]/2-.1))
+    holes.append(translate(hole, (pcb_screw_x_offsets[0], 0, 0)))
+    holes.append(translate(hole, (pcb_screw_x_offsets[1], 0, 0)))
+    holes.append(translate(hole, (pcb_screw_x_offsets[2], 0, 0)))
+
+    return holes
 
 if oled_center_row is not None:
     base_pt1 = key_position(
@@ -2588,9 +2589,9 @@ def model_side(side="right"):
     if controller_mount_type in ['PCB_MOUNT']:
         s2 = difference(s2, [pcb_usb_hole()])
         s2 = difference(s2, [trrs_hole()])
-        #s2 = difference(s2, [pcb_screw_hole()])
         s2 = union([s2, pcb_holder()])
         s2 = difference(s2, [wall_thinner()])
+        s2 = difference(s2, pcb_screw_hole())
 
     if controller_mount_type in ['None']:
         0 # do nothing, only here to expressly state inaction.
