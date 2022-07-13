@@ -3,10 +3,25 @@ This is a fork of [Dactyl-Manuform](https://github.com/tshort/dactyl-keyboard) b
 
 While the code structure remains comparable to the original, Clojure and OpenSCAD have been replaced by Python and cadquery/OpenCASCADE.  The predecessors were exceptional contributions to the ergo keyboard community by the authors but used a rather esoteric programming language, Clojure, and a relatively inconsistent geometry engine, OpenSCAD.  My hope is that by converting the code the community will have an easier time modifying and evolving this design.  
 
-## Helpful Feedback
-**Special thanks to [u/loss_of_signal](https://www.reddit.com/user/loss_of_signal/) on Reddit** for exceptionally useful feedback and suggestions.  Our discussions led to the addition of the controller tray and prompted me to finally add a real OLED mount.  **As someone trying to give the community something new and useful, productive feedback is both extremely helpful and extremely rare.**  Never be afraid to send a message or make a pull request.  I may or may not decide to implement the suggestion, but the discussion and consideration is always worthwhile. 
 
-## Updated Geometry Engine, now generating STEP files !!!
+## Collaborations and Donations
+I decided to start accepting donations to help offset some of the prototyping costs and development time.  There are 2 ways to contribute to this project:
+
+### Purchase a kit or keyboard from https://www.ergohaven.xyz/
+I am also supported by [ergohaven](https://www.ergohaven.xyz/).  The Dactyl-Manuforms are generated from this repository.  After working with the owner on additions to support new features we decided to collaborate to evolve the designs they can offer and to support my work.  
+
+### Donate directly
+I opened Liberapay and Ko-fi accounts to accept donations.  It is obviously not necessary, but is appreciated.  If you do donate and have something specific you really want to see, please let me know. I want to be very open that I can't promise to complete all requests as there are many reasons like engine capabilities and generator construction that can make certain features unfeasible, but I will do my best to improve this repo for you and the ergo keyboard community.
+
+[![Donate using Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/joshreve/donate)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K25ZIHR)
+
+
+## Helpful Feedback
+At this point there has been tons of feedback form the community and I greatly appreciate it.  While I can only work on this in my free time, I do my best to respond to anyone who posts a comment or question.  Feedback on issues or just possible new features is always welcome.
+
+## Updated Geometry Engine, generating STEP files
 As part of the effort to create a new engine I converted the code to cadquery/OpenCASCADE.  While OpenSCAD has provided an open source 3D engine that is extremely popular, it frankly creates barely passable STLs when you have complex geometry.  After being extremely frustrated trying to fix the mesh I realized it is just not a stable engine to create high quality files.  OpenCASCADE is extremely powerful but requires extensive detail to operate.  cadquery provided an excellent platform to run a stable geometry engine with a simplified API. 
 
 ![STEP File in FreeCAD](./resources/FreeCAD_STEP_screen.png)
@@ -15,20 +30,27 @@ As part of the effort to create a new engine I converted the code to cadquery/Op
 
 ### Docker Autobuild
 ![Docker Support!](./resources/docker_containers.png)
+
 At the excellent suggestion of [martint17r](https://github.com/joshreve/dactyl-keyboard/issues?q=is%3Apr+author%3Amartint17r) 
-I have added docker configurations with an Windows batch file to assist with getting setup. 
-If there is sufficient interest I can add a .sh file as well.  If you have 
+I have added docker configurations with a Windows batch file to assist with getting setup. 
+If you have 
 [docker desktop](https://www.docker.com/products/docker-desktop) installed, the batch file will create the 
-dactyl-keyboard image and 3 containers:  DM-run: runs the dactyl_manuform.py, DM-config: runs generate_configuration.py,
-and DM-shell:  just starts an interactive session to manually run from shell (tip: run bash after entering to get the better 
-shell environment).  All apps bindmount the src and things directory to allow editing in the host and running in the
-container.  While not exactly hard drive space efficient, this hopefully this helps those having issue getting
+dactyl-keyboard image and 4 containers:
+
+- DM-run: runs `dactyl_manuform.py`, 
+- DM-config: runs `generate_configuration.py`
+- DM-shell: starts an interactive session to manually run from shell
+  - tip: run bash after entering to get a better shell environment
+- DM-release-build: runs `model_builder.py` to generate a number of keyboard variants
+
+All apps bindmount the `src` and `things` directory to allow editing in the host and running in the
+container.  While not exactly hard drive space efficient, this hopefully helps those having issues getting
 cadquery running and prevents local Python conflicts.  It works well on my computer, but I don't use
 docker often, so please let me know if you find any issues with the approach.
 
 ### Refactored
 
-Your settings are now created by `generate_configuration.py` or by direct modification fo the `run_config.json` file.  
+Your settings are now created by `generate_configuration.py` or by direct modification of the `run_config.json` file.  
 This allows you to save `run_config.json` to share your configuration.
 
 Additionally, the OpenSCAD/solid python and OpenCASCADE/cadquery versions are merged with separate helper functions 
@@ -38,8 +60,12 @@ Running `dactyl_manuform.py` will automatically load the `run_config.json` file.
 ### Everyone gets a thumb cluster!
 
 Added support of for the thumb clusters in the [carbonfet Dactyl library](https://github.com/carbonfet/dactyl-manuform).
-These are the "mini" and "carbonfet" thumb clusters. Feel free to try them out with by setting `'thumb_style'` to 
-`'DEFAULT'`, `'MINI'`, or `'CARBONFET'`.
+These are the "mini" and "carbonfet" thumb clusters. Additional trackball cluster added as well more info to be added after additional build and debug time.
+
+Feel free to try them out with by setting `'thumb_style'` to 
+`'DEFAULT'`, `'MINI'`, `'CARBONFET'`, `'MINIDOX'`, `'TRACKBALL_ORBYL'`, and `'TRACKBALL_CJ'`.
+
+Trackball features accommodate a [Perixx PERIPRO-303](https://smile.amazon.com/gp/product/B08DD6GQRV/).  Others may fit, but this was the target ball diameter for the design.  It is a little smaller than a Ploopy to try to fit better in the cluster.
 
 Rendered and actual images to be added in future commits.
 
@@ -83,7 +109,7 @@ This is a new feature so any feedback is appreciated.  If you have issues, messa
 
 ### OLED Display Mount
 
-Added 3 OLED mounts.  Have printed them stand alone with success.
+Added 3 OLED mounts.  Have printed them stand alone with success.  I suggest clip, but it may require some tweaks based on your printer (over vs under sized).
 
 ![OLED Clip Mounting](./resources/clip_OLED_mounting.png)
 ![OLED Clip Plate](./resources/OLED_clip_plate.png)
@@ -101,16 +127,67 @@ This is a new feature so any feedback is appreciated.  If you have issues, messa
 You can now have slightly better control of screw mounts.  Set to `'screws_offset':'INSIDE'`, `'screws_offset':'OUTSIDE'` or `'screws_offset': 'ORIGINAL'` to control screw locations relative to the wall. 
 ![Inside Screws](./resources/inside_screw_posts.png)
 
-## Status / Future
-This is now a bit of a monster of many minds and yet continues to bear fruit.  I plan to continue to use this code to try new geometries and features to share.  I am still working on a new generator, but feel this one can continue to evolve and inform the other effort.
+I am planning to deprecate outside and original at some point.  I don't see the need to carry all of them and the hidden look the best.  If you disagree feel free to let me know and I may keep a second form.
 
-## Generating a Design
+## Status / Future
+This is now a bit of a monster of many minds and yet continues to bear fruit.  
+I plan to continue to use this code to try new geometries and features to share for the foreseeable future.
+
+## Installation
+
+There are three different environments in which you can run this application. Depending on which you choose, the installation process will vary.
+
+- [Docker Environment](#docker-environment-installation)
+- [Conda Environment](#conda-environment-installation)
+- [Python Environment](#python-environment-installation)
+
+### Docker Environment Installation
+
+Running the application with Docker is the most convenient way to do so. In addition to a straightforward installation, this also allows you to generate models in the background without having to keep a shell open.
+
+*Note:* If you are using Windows, see [Docker Autobuild](#docker-autobuild).
+
+Before you proceed, ensure you have installed [Docker](https://www.docker.com/) and the `docker` command is available from your terminal.
+
+There are two tools you can use to help manage the Docker containers associated with this project. 
+
+#### Make
+
+If you prefer, you can use `make` to manage the containers. Type `make help` to see the available commands.
+
+#### Bash Script
+
+The `dactyl.sh` bash script provides a CLI to manage the containers. Type `./dactyl.sh --help` to see all CLI options.
+
+In addition to the CLI you can run `./dactyl.sh` without any arguments to use an interactive menu. 
+
+Upon running the script, you will be prompted to build the dactyl-keyboard Docker image.
+
+Once the image is built, you can choose which containers to run on an as-needed basis. In general, you can start, stop, rebuild, inspect, and remove the containers via the CLI/Menu. 
+
+You can also remove all of the Docker artifacts by running the included uninstaller.
+
+*Tip:* Run `./dactyl.sh shell --session` to jump into a bash session inside of the shell container.
+
+### Conda Environment Installation
+
+After the Docker installation, Anaconda is the next best option. Before you begin, ensure you have installed [Anaconda](https://docs.anaconda.com/anaconda/install/index.html) and the `conda` command is available from your terminal.
+
+You can install all of the dependencies by hand, but you can automate the install by running the bash script `./conda.sh`. This will create a python 3.7 environment named `dactyl-keyboard` and install all of the required dependencies.
+
+If you would like to install into a conda environment manually, check the bash script to see all of the required commands.
+
+If you would like to remove the conda artifacts, run `./conda.sh --uninstall`.
+
+### Python Environment Installation
+
+You can install the application in a regular python environment, but it is not recommended. You will not be able to take advantage of the updated geometry generated by the CadQuery engine, as this is only available via the Docker/Anaconda installation.
 
 **Setting up the Python environment - NEW**
 * [Install Python 3.X](https://www.python.org/downloads/release/python-385/) or use your [favorite distro / platform (Anaconda)](https://www.anaconda.com/products/individual) 
 * It is advisable, but not necessary, to setup a virtual environment to prevent package/library incompatibility 
 * [Install Numpy](https://pypi.org/project/numpy/), easiest method is `pip install numpy` or `pip3 install numpy` on linux.
-* [Install dataclasses_json](https://pypi.org/project/dataclasses_json/), easiest method is `pip install numpy` or `pip3 install numpy` on linux.
+* [Install dataclasses_json](https://pypi.org/project/dataclasses_json/), easiest method is `pip install dataclasses-json` or `pip3 install dataclasses-json` on linux.
 
 **cadquery install**
 * [Install scipy](https://pypi.org/project/scipy/), easiest method is `pip install scipy` or `pip3 install scipy` on linux.
@@ -119,6 +196,8 @@ This is now a bit of a monster of many minds and yet continues to bear fruit.  I
 **OpenSCAD install**
 * [Install SolidPython](https://pypi.org/project/solidpython/), easiest method is `pip install solidpython` or `pip3 install solidpython` on linux.
 * [Install OpenSCAD](http://www.openscad.org/)
+
+## Generating the design
 
 **Generating the design - UPDATED**
 * ~~Run `python dactyl_manuform_cadquery.py` or `python3 dactyl_manuform_cadquery.py`~~ 

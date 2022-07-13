@@ -23,10 +23,14 @@ def cone(r1, r2, height):
 
 
 def rotate(shape, angle):
+    if shape is None:
+        return None
     return sl.rotate(angle)(shape)
 
 
 def translate(shape, vector):
+    if shape is None:
+        return None
     return sl.translate(tuple(vector))(shape)
 
 
@@ -47,10 +51,11 @@ def union(shapes):
     debugprint('union()')
     shape = None
     for item in shapes:
-        if shape is None:
-            shape = item
-        else:
-            shape += item
+        if item is not None:
+            if shape is None:
+                shape = item
+            else:
+                shape += item
     return shape
 
 
@@ -58,23 +63,27 @@ def add(shapes):
     debugprint('union()')
     shape = None
     for item in shapes:
-        if shape is None:
-            shape = item
-        else:
-            shape += item
+        if item is not None:
+            if shape is None:
+                shape = item
+            else:
+                shape += item
     return shape
 
 
 def difference(shape, shapes):
     debugprint('difference()')
     for item in shapes:
-        shape -= item
+        if item is not None:
+            shape -= item
     return shape
 
 
 def intersect(shape1, shape2):
-    return sl.intersection()(shape1, shape2)
-
+    if shape2 is not None:
+        return sl.intersection()(shape1, shape2)
+    else:
+        return shape1
 
 def hull_from_points(points):
     return sl.hull()(*points)
@@ -135,7 +144,7 @@ def extrude_poly(outer_poly, inner_polys=None, height=1):
 
 def import_file(fname, convexity=2):
     print("IMPORTING FROM {}".format(fname))
-    return sl.import_stl(fname + ".stl", convexity=convexity)
+    return sl.import_stl(fname.replace("\\", "/") + ".stl", convexity=convexity)
 
 
 def export_file(shape, fname):
