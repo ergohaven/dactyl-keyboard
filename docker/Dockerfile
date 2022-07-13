@@ -1,18 +1,21 @@
-FROM mambaorg/micromamba:0.8.2
+FROM continuumio/miniconda3
 
 RUN apt-get update && \
     apt-get install -y libgl1-mesa-glx gcc bash && \
     rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
-RUN micromamba install -y -n base -c conda-forge -c cadquery \
-    python=3 \
-    cadquery=master \
-    numpy=1 \
-    scipy=1 && \
-    (rm /opt/conda/pkgs/cache/* || true)
 
-RUN pip3 install solidpython
+COPY ./docker/environment.yml .
 
+RUN conda env create -f environment.yml
+
+RUN conda init bash
+
+SHELL ["bash", "-lc"]
+
+RUN conda activate myenv
+
+RUN echo "source activate myenv" >> ~/.bashrc
+ENV PATH /opt/conda/envs/myenv/bin:$PATH
 
 WORKDIR /app/src

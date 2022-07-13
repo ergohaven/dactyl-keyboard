@@ -82,7 +82,8 @@ def add(shapes):
 def difference(shape, shapes):
     debugprint('difference()')
     for item in shapes:
-        shape -= item
+        if item is not None:
+            shape -= item
     return shape
 
 

@@ -30,6 +30,8 @@ def cone(r1, r2, height):
 
 
 def rotate(shape, angle):
+    if shape is None:
+        return None
     origin = (0, 0, 0)
     shape = shape.rotate(axisStartPoint=origin, axisEndPoint=(1, 0, 0), angleDegrees=angle[0])
     shape = shape.rotate(axisStartPoint=origin, axisEndPoint=(0, 1, 0), angleDegrees=angle[1])
@@ -38,6 +40,8 @@ def rotate(shape, angle):
 
 
 def translate(shape, vector):
+    if shape is None:
+        return None
     return shape.translate(tuple(vector))
 
 
@@ -50,10 +54,11 @@ def union(shapes):
     debugprint('union()')
     shape = None
     for item in shapes:
-        if shape is None:
-            shape = item
-        else:
-            shape = shape.union(item)
+        if item is not None:
+            if shape is None:
+                shape = item
+            else:
+                shape = shape.union(item)
     return shape
 
 
@@ -61,23 +66,27 @@ def add(shapes):
     debugprint('union()')
     shape = None
     for item in shapes:
-        if shape is None:
-            shape = item
-        else:
-            shape = shape.add(item)
+        if item is not None:
+            if shape is None:
+                shape = item
+            else:
+                shape = shape.add(item)
     return shape
 
 
 def difference(shape, shapes):
     debugprint('difference()')
     for item in shapes:
-        shape = shape.cut(item)
+        if item is not None:
+            shape = shape.cut(item)
     return shape
 
 
 def intersect(shape1, shape2):
-    return shape1.intersect(shape2)
-
+    if shape2 is not None:
+        return shape1.intersect(shape2)
+    else:
+        return shape1
 
 def face_from_points(points):
     # debugprint('face_from_points()')
