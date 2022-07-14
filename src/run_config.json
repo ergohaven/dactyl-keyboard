@@ -2,7 +2,7 @@
     "ENGINE": "solid",
     "save_dir": ".",
     "config_name": "DM",
-    "show_caps": "MX",
+    "show_caps": false,
     "show_pcbs": false,
     "nrows": 5,
     "ncols": 6,
@@ -10,24 +10,24 @@
     "beta": 0.08726638888888888,
     "centercol": 3,
     "centerrow_offset": 3,
-    "tenting_angle": 0.26179916666666664,
+    "tenting_angle": 0.17453277777777776,
     "symmetry": "symmetric",
     "column_style_gt5": "orthographic",
     "column_style": "standard",
     "reduced_inner_cols": 2,
-    "reduced_outer_cols": 0,
+    "reduced_outer_cols": 2,
     "thumb_offsets": [
         6,
         -3,
         7
     ],
-    "keyboard_z_offset": 11,
-    "extra_width": 2.5,
+    "keyboard_z_offset": 3,
+    "extra_width": 2,
     "extra_height": 1.0,
-    "web_thickness": 5.1,
+    "web_thickness": 1.5,
     "post_size": 0.1,
     "post_adj": 0,
-    "thumb_style": "DEFAULT",
+    "thumb_style": "MINIDOX",
     "default_1U_cluster": true,
     "minidox_Usize": 1.6,
     "mini_index_key": true,
@@ -289,10 +289,10 @@
     "left_wall_lower_x_offset": 0,
     "left_wall_lower_y_offset": 0,
     "left_wall_lower_z_offset": 0,
-    "wall_thickness": 4.5,
-    "wall_base_y_thickness": 4.5,
-    "wall_base_x_thickness": 4.5,
-    "wall_base_back_thickness": 4.5,
+    "wall_thickness": 1.5,
+    "wall_base_y_thickness": 1.5,
+    "wall_base_x_thickness": 1.5,
+    "wall_base_back_thickness": 1.5,
     "fixed_angles": [
         0.17453277777777776,
         0.17453277777777776,
@@ -321,9 +321,9 @@
         17.5
     ],
     "fixed_tenting": 0.0,
-    "plate_style": "NOTCH",
-    "hole_keyswitch_height": 14.0,
-    "hole_keyswitch_width": 14.0,
+    "plate_style": "HOLE",
+    "hole_keyswitch_height": 13.9,
+    "hole_keyswitch_width": 13.9,
     "nub_keyswitch_height": 14.4,
     "nub_keyswitch_width": 14.4,
     "undercut_keyswitch_height": 14.0,
@@ -339,7 +339,7 @@
     "undercut_transition": 0.2,
     "plate_file": null,
     "plate_offset": 0.0,
-    "oled_mount_type": "CLIP",
+    "oled_mount_type": "NONE",
     "oled_center_row": 1.25,
     "oled_translation_offset": [
         0,
@@ -441,47 +441,48 @@
         }
     },
     "screws_offset": "INSIDE",
-    "screw_insert_height": 3.8,
-    "screw_insert_bottom_radius": 1.25,
-    "screw_insert_top_radius": 1.25,
-    "screw_insert_outer_radius": 4.25,
+    "screw_insert_height": 2.8,
+    "screw_insert_bottom_radius": 1.0,
+    "screw_insert_top_radius": 1.0,
+    "screw_insert_outer_radius": 1.5,
     "wire_post_height": 7,
     "wire_post_overhang": 3.5,
     "wire_post_diameter": 2.6,
-    "controller_mount_type": "EXTERNAL",
+    "controller_mount_type": "PCB_MOUNT",
     "external_holder_height": 12.5,
     "external_holder_width": 28.75,
     "external_holder_xoffset": -5.0,
     "external_holder_yoffset": -4.5,
     "pcb_mount_ref_offset": [
-        0,
+        1,
         -5,
         0
     ],
     "pcb_holder_size": [
         34.6,
-        7,
-        4
+        0,
+        3
     ],
     "pcb_holder_offset": [
-        8.9,
-        0,
+        9.9,
+        3,
         0
     ],
     "pcb_usb_hole_size": [
-        7.5,
+        9.3,
         10.0,
-        4
+        4.5
     ],
     "pcb_usb_hole_offset": [
-        15,
+        16,
         0,
         4.5
     ],
+    "pcb_usb_hole_z_offset": 2.5,
     "wall_thinner_size": [
-        34,
+        33,
         7,
-        10
+        2
     ],
     "trrs_hole_size": [
         3,
@@ -490,19 +491,19 @@
     "trrs_offset": [
         0,
         0,
-        1.5
+        7
     ],
     "pcb_screw_hole_size": [
-        0.5,
+        0.7,
         10
     ],
     "pcb_screw_x_offsets": [
-        -5.5,
-        7.75,
-        22
+        -4.5,
+        8.75,
+        23
     ],
-    "pcb_screw_y_offset": -2,
-    "screw_hole_diameter": 3,
+    "pcb_screw_y_offset": -1.5,
+    "screw_hole_diameter": 1.4,
     "base_thickness": 3.0,
     "base_offset": 3.0,
     "base_rim_thickness": 5.0,
@@ -557,12 +558,12 @@
         ],
         [
             0,
-            -6,
+            -9,
             5
         ],
         [
             0,
-            -6,
+            -9,
             5
         ],
         [

@@ -3310,7 +3310,7 @@ def wall_thinner():
         (
             pcb_holder_position[0],
             pcb_holder_position[1] - wall_thinner_size[1]/2,
-            wall_thinner_size[2]/2 + pcb_holder_thickness,
+            -wall_thinner_size[2] + pcb_holder_thickness,
         )
     )
     return shape
@@ -3941,27 +3941,27 @@ def thumb_screw_insert(bottom_radius, top_radius, height, offset=None, side='rig
 def screw_insert_all_shapes(bottom_radius, top_radius, height, offset=0, side='right'):
     print('screw_insert_all_shapes()')
     shape = (
-        translate(screw_insert(0, 0, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
+        translate(screw_insert(0, -1, bottom_radius, top_radius, height, side=side), (0, -7, offset)),
         translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (0, left_wall_lower_y_offset, offset)),
-        translate(screw_insert(3, lastrow, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
-        translate(screw_insert(3, 0, bottom_radius, top_radius, height, side=side), (0,0, offset)),
-        translate(screw_insert(lastcol, 0, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
-        translate(screw_insert(lastcol, cornerrow, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
-        # translate(screw_insert_thumb(bottom_radius, top_radius, height), (0, 0, offset)),
+        translate(screw_insert(5, 0, bottom_radius, top_radius, height, side=side), (0, 1.5, offset)),
+        #translate(screw_insert(0, 6, bottom_radius, top_radius, height, side=side), (-1,-2, offset)),
+        translate(screw_insert(3, 4, bottom_radius, top_radius, height, side=side), (5, 2, offset)),
+        #translate(screw_insert(lastcol, cornerrow, bottom_radius, top_radius, height, side=side), (-0.5, 0, offset)),
+        #translate(screw_insert_thumb(bottom_radius, top_radius, height), (0, 0, offset)),
     )
 
     return shape
 
 def thumb_screw_insert_holes(side='right'):
     return thumb_screw_insert(
-        screw_insert_bottom_radius, screw_insert_top_radius, screw_insert_height+.02, offset=-.01, side=side
+        0, 0, screw_insert_height+.02, offset=-.01, side=side
     )
 
 def thumb_screw_insert_outers(offset=0.0, side='right'):
     # screw_insert_bottom_radius + screw_insert_wall
     # screw_insert_top_radius + screw_insert_wall
-    bottom_radius = screw_insert_outer_radius
-    top_radius = screw_insert_outer_radius
+    bottom_radius = 0
+    top_radius = 0
     height = screw_insert_height + 1.5
     return thumb_screw_insert(bottom_radius, top_radius, height, offset=offset, side=side)
 
@@ -4057,7 +4057,7 @@ def model_side(side="right"):
         s2 = difference(s2, [pcb_usb_hole()])
         s2 = difference(s2, [trrs_hole()])
         s2 = union([s2, pcb_holder()])
-        s2 = difference(s2, [wall_thinner()])
+        s2 = union([s2, wall_thinner()])
         s2 = difference(s2, pcb_screw_hole())
 
     if controller_mount_type in [None, 'None']:

@@ -21,7 +21,7 @@ shape_config = {
     'save_dir': '.',
     'config_name':  "DM",
 
-    'show_caps': 'MX',
+    'show_caps': False,
     'show_pcbs': False, #only runs if caps are shown, easist place to initially inject geometry
 
     'nrows':  5, #5,  # key rows
@@ -31,7 +31,7 @@ shape_config = {
     'beta':  pi / 36.0,  # curvature of the rows
     'centercol':  3,  # controls left_right tilt / tenting (higher number is more tenting)
     'centerrow_offset':  3,  # rows from max, controls front_back tilt
-    'tenting_angle':  pi / 12.0,  # or, change this for more precise tenting control
+    'tenting_angle':  pi / 18.0,  # or, change this for more precise tenting control
 
     # symmetry states if it is a symmetric or asymmetric bui.  If asymmetric it doubles the generation time.
     'symmetry':  "symmetric",  # "asymmetric" or "symmetric"
@@ -39,20 +39,20 @@ shape_config = {
     'column_style_gt5':  "orthographic",
     'column_style':  "standard",  # options include :standard, :orthographic, and :fixed
     'reduced_inner_cols': 2,  #currently supports 0 or 2 due to thumb cluster attachment
-    'reduced_outer_cols': 0,
+    'reduced_outer_cols': 2,
 
 
     'thumb_offsets':  [6, -3, 7],
     'keyboard_z_offset':  (
-        11  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
+        3  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
 
 
-    'extra_width': 2.5,  # extra space between the base of keys# original= 2
+    'extra_width': 2,  # extra space between the base of keys# original= 2
     'extra_height': 1.0,  # original= 0.5
 
 
-    'web_thickness': 4.0 + 1.1,
+    'web_thickness': 1.0 + 0.5,
     'post_size': 0.1,
     # post_adj':  post_size / 2
     'post_adj': 0,
@@ -62,7 +62,7 @@ shape_config = {
     ##############################
 
     # 'DEFAULT' 6-key, 'MINI' 5-key, 'CARBONFET' 6-key, 'MINIDOX' 3-key, 'TRACKBALL_ORBYL', 'TRACKBALL_CJ'
-    'thumb_style': 'DEFAULT',
+    'thumb_style': 'MINIDOX',
     'default_1U_cluster': True, # only used with default, makes top right thumb cluster key 1U
     # Thumb key size.  May need slight oversizing, check w/ caps.  Additional spacing will be automatically added for larger keys.
     'minidox_Usize': 1.6,
@@ -205,11 +205,11 @@ shape_config = {
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_y_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_z_offset': 0,
-    'wall_thickness':  4.5,  # wall thickness parameter used on upper/mid stage of the wall
-    'wall_base_y_thickness':  4.5,  # wall thickness at the lower stage
-    'wall_base_x_thickness':  4.5,  # wall thickness at the lower stage
+    'wall_thickness':  1.5,  # wall thickness parameter used on upper/mid stage of the wall
+    'wall_base_y_thickness':  1.5,  # wall thickness at the lower stage
+    'wall_base_x_thickness':  1.5,  # wall thickness at the lower stage
 
-    'wall_base_back_thickness':  4.5,  # wall thickness at the lower stage in the specifically in back for interface.
+    'wall_base_back_thickness':  1.5,  # wall thickness at the lower stage in the specifically in back for interface.
 
     ## Settings for column_style == :fixed
     ## The defaults roughly match Maltron settings
@@ -236,10 +236,10 @@ shape_config = {
     # 'HS_UNDERCUT' = hot swap underside with undercut. Does not generate properly.  Hot swap step needs to be modified.
     # 'HS_NOTCH' = hot swap underside with notch.  Does not generate properly.  Hot swap step needs to be modified.
     # 'plate_style':  'NUB',
-    'plate_style': 'NOTCH',
+    'plate_style': 'HOLE',
 
-    'hole_keyswitch_height':  14.0,
-    'hole_keyswitch_width':  14.0,
+    'hole_keyswitch_height':  13.9,
+    'hole_keyswitch_width':  13.9,
 
     'nub_keyswitch_height':  14.4,
     'nub_keyswitch_width':  14.4,
@@ -273,7 +273,7 @@ shape_config = {
     # 'SLIDING' = Features to slide the OLED in place and use a pin or block to secure from underneath.
     # 'CLIP' = Features to set the OLED in a frame a snap a bezel down to hold it in place.
 
-    'oled_mount_type':  'CLIP',
+    'oled_mount_type':  'NONE',
     'oled_center_row': 1.25, # if not None, this will override the oled_mount_location_xyz and oled_mount_rotation_xyz settings
     'oled_translation_offset': (0, 0, 4), # Z offset tweaks are expected depending on curvature and OLED mount choice.
     'oled_rotation_offset': (0, 0, 0),
@@ -355,15 +355,15 @@ shape_config = {
 
     'screws_offset': 'INSIDE', # 'OUTSIDE', 'INSIDE', 'ORIGINAL'
 
-    'screw_insert_height': 3.8,
+    'screw_insert_height': 2.8,
 
     # 'screw_insert_bottom_radius': 5.31 / 2,  #Designed for inserts
     # 'screw_insert_top_radius': 5.1 / 2,  #Designed for inserts
 
-    'screw_insert_bottom_radius': 2.5 / 2,  # Designed for self tapping
-    'screw_insert_top_radius': 2.5 / 2,  # Designed for self tapping
+    'screw_insert_bottom_radius': 2 / 2,  # Designed for self tapping
+    'screw_insert_top_radius': 2 / 2,  # Designed for self tapping
 
-    'screw_insert_outer_radius': 4.25,  # Common to keep interface to base
+    'screw_insert_outer_radius': 1.5,  # Common to keep interface to base
 
     # Does anyone even use these?  I think they just get in the way.
     'wire_post_height': 7,
@@ -383,7 +383,7 @@ shape_config = {
     # 'USB_TEENSY' = Teensy holder, no RJ9
     # 'EXTERNAL' = square cutout for a holder such as the one from lolligagger.
     # 'NONE' = No openings in the back.
-    'controller_mount_type':  'EXTERNAL',
+    'controller_mount_type':  'PCB_MOUNT',
 
     'external_holder_height':  12.5,
     'external_holder_width':  28.75,
@@ -395,28 +395,29 @@ shape_config = {
     ###################################
     ## PCB Screw Mount               ##
     ###################################
-    "pcb_mount_ref_offset": [0, -5, 0],
-    "pcb_holder_size": [34.6, 7, 4],
-    "pcb_holder_offset": [8.9, 0, 0],
+    "pcb_mount_ref_offset": [1, -5, 0],
+    "pcb_holder_size": [34.6, 0, 3],
+    "pcb_holder_offset": [9.9, 3, 0],
 
-    "pcb_usb_hole_size": [7.5, 10.0, 4],
-    "pcb_usb_hole_offset": [15, 0, 4.5],
+    "pcb_usb_hole_size": [9.3, 10.0, 4.5],
+    "pcb_usb_hole_offset": [16, 0, 4.5],
+    "pcb_usb_hole_z_offset": 2.5,
 
-    "wall_thinner_size": [34, 7, 10],
+    "wall_thinner_size": [33, 7, 2],
 
     "trrs_hole_size": [3, 20],
-    "trrs_offset": [0, 0, 1.5],
+    "trrs_offset": [0, 0, 7],
 
-    "pcb_screw_hole_size": [.5, 10],
-    "pcb_screw_x_offsets": [- 5.5, 7.75, 22], # for the screw positions off of reference
-    "pcb_screw_y_offset": -2,
+    "pcb_screw_hole_size": [.7, 10],
+    "pcb_screw_x_offsets": [- 4.5, 8.75, 23], # for the screw positions off of reference
+    "pcb_screw_y_offset": -1.5,
 
 
     ###################################
     ## Bottom Plate Dimensions
     ###################################
     # COMMON DIMENSION
-    'screw_hole_diameter': 3,
+    'screw_hole_diameter': 1.4,
     # USED FOR CADQUERY ONLY
     'base_thickness': 3.0, # thickness in the middle of the plate
     'base_offset': 3.0, # Both start flat/flush on the bottom.  This offsets the base up (if positive)
@@ -462,8 +463,8 @@ shape_config = {
         [0, 0, 0],
         [0, 2.82, -4.5],
         [0, 0, 0],
-        [0, -6, 5],# REDUCED STAGGER
-        [0, -6, 5],# REDUCED STAGGER
+        [0, -9, 5],# REDUCED STAGGER
+        [0, -9, 5],# REDUCED STAGGER
         [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
     ],
 
