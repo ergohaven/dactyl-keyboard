@@ -42,7 +42,7 @@ shape_config = {
     'reduced_outer_cols': 2,
 
 
-    'thumb_offsets':  [6, -3, 7],
+    'thumb_offsets':  [6, -3, 5],
     'keyboard_z_offset':  (
         3  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
@@ -52,7 +52,7 @@ shape_config = {
     'extra_height': 1.0,  # original= 0.5
 
 
-    'web_thickness': 1.0 + 0.5,
+    'web_thickness': 1.0 + 1.0,
     'post_size': 0.1,
     # post_adj':  post_size / 2
     'post_adj': 0,
@@ -65,7 +65,7 @@ shape_config = {
     'thumb_style': 'MINIDOX',
     'default_1U_cluster': True, # only used with default, makes top right thumb cluster key 1U
     # Thumb key size.  May need slight oversizing, check w/ caps.  Additional spacing will be automatically added for larger keys.
-    'minidox_Usize': 1.6,
+    'minidox_Usize': 1.2,
     # Thumb plate rotations, anything other than 90 degree increments WILL NOT WORK.
 
     'mini_index_key': True,
@@ -205,11 +205,11 @@ shape_config = {
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_y_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_z_offset': 0,
-    'wall_thickness':  1.5,  # wall thickness parameter used on upper/mid stage of the wall
-    'wall_base_y_thickness':  1.5,  # wall thickness at the lower stage
-    'wall_base_x_thickness':  1.5,  # wall thickness at the lower stage
+    'wall_thickness':  2.0,  # wall thickness parameter used on upper/mid stage of the wall
+    'wall_base_y_thickness':  2.0,  # wall thickness at the lower stage
+    'wall_base_x_thickness':  2.0,  # wall thickness at the lower stage
 
-    'wall_base_back_thickness':  1.5,  # wall thickness at the lower stage in the specifically in back for interface.
+    'wall_base_back_thickness':  2.0,  # wall thickness at the lower stage in the specifically in back for interface.
 
     ## Settings for column_style == :fixed
     ## The defaults roughly match Maltron settings
@@ -238,8 +238,8 @@ shape_config = {
     # 'plate_style':  'NUB',
     'plate_style': 'HOLE',
 
-    'hole_keyswitch_height':  13.9,
-    'hole_keyswitch_width':  13.9,
+    'hole_keyswitch_height':  13.8,
+    'hole_keyswitch_width':  13.8,
 
     'nub_keyswitch_height':  14.4,
     'nub_keyswitch_width':  14.4,

@@ -19,17 +19,17 @@
     "thumb_offsets": [
         6,
         -3,
-        7
+        5
     ],
     "keyboard_z_offset": 3,
     "extra_width": 2,
     "extra_height": 1.0,
-    "web_thickness": 1.5,
+    "web_thickness": 2.0,
     "post_size": 0.1,
     "post_adj": 0,
     "thumb_style": "MINIDOX",
     "default_1U_cluster": true,
-    "minidox_Usize": 1.6,
+    "minidox_Usize": 1.2,
     "mini_index_key": true,
     "default_thumb_screw_xy_locations": [
         [
@@ -289,10 +289,10 @@
     "left_wall_lower_x_offset": 0,
     "left_wall_lower_y_offset": 0,
     "left_wall_lower_z_offset": 0,
-    "wall_thickness": 1.5,
-    "wall_base_y_thickness": 1.5,
-    "wall_base_x_thickness": 1.5,
-    "wall_base_back_thickness": 1.5,
+    "wall_thickness": 2.0,
+    "wall_base_y_thickness": 2.0,
+    "wall_base_x_thickness": 2.0,
+    "wall_base_back_thickness": 2.0,
     "fixed_angles": [
         0.17453277777777776,
         0.17453277777777776,
@@ -322,8 +322,8 @@
     ],
     "fixed_tenting": 0.0,
     "plate_style": "HOLE",
-    "hole_keyswitch_height": 13.9,
-    "hole_keyswitch_width": 13.9,
+    "hole_keyswitch_height": 13.8,
+    "hole_keyswitch_width": 13.8,
     "nub_keyswitch_height": 14.4,
     "nub_keyswitch_width": 14.4,
     "undercut_keyswitch_height": 14.0,
