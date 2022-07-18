@@ -18,13 +18,13 @@
     "reduced_outer_cols": 2,
     "thumb_offsets": [
         6,
-        -3,
-        5
+        0,
+        6
     ],
     "keyboard_z_offset": 3,
-    "extra_width": 2,
-    "extra_height": 1.0,
-    "web_thickness": 2.0,
+    "extra_width": 1,
+    "extra_height": 0.5,
+    "web_thickness": 3.1,
     "post_size": 0.1,
     "post_adj": 0,
     "thumb_style": "MINIDOX",
@@ -284,15 +284,15 @@
     "wall_z_offset": 15,
     "wall_x_offset": 5,
     "wall_y_offset": 6,
-    "left_wall_x_offset": 12,
+    "left_wall_x_offset": 6,
     "left_wall_z_offset": 3,
     "left_wall_lower_x_offset": 0,
     "left_wall_lower_y_offset": 0,
     "left_wall_lower_z_offset": 0,
-    "wall_thickness": 2.0,
-    "wall_base_y_thickness": 2.0,
-    "wall_base_x_thickness": 2.0,
-    "wall_base_back_thickness": 2.0,
+    "wall_thickness": 2.5,
+    "wall_base_y_thickness": 2.5,
+    "wall_base_x_thickness": 2.5,
+    "wall_base_back_thickness": 2.5,
     "fixed_angles": [
         0.17453277777777776,
         0.17453277777777776,
@@ -441,10 +441,10 @@
         }
     },
     "screws_offset": "INSIDE",
-    "screw_insert_height": 2.8,
-    "screw_insert_bottom_radius": 1.0,
-    "screw_insert_top_radius": 1.0,
-    "screw_insert_outer_radius": 1.5,
+    "screw_insert_height": 3.6,
+    "screw_insert_bottom_radius": 2.55,
+    "screw_insert_top_radius": 2.4,
+    "screw_insert_outer_radius": 4,
     "wire_post_height": 7,
     "wire_post_overhang": 3.5,
     "wire_post_diameter": 2.6,
@@ -479,10 +479,15 @@
         4.5
     ],
     "pcb_usb_hole_z_offset": 2.5,
-    "wall_thinner_size": [
+    "support_planck_size": [
         33,
         7,
         2
+    ],
+    "wall_thinner_size": [
+        33,
+        5,
+        10
     ],
     "trrs_hole_size": [
         3,
@@ -503,21 +508,21 @@
         23
     ],
     "pcb_screw_y_offset": -1.5,
-    "screw_hole_diameter": 1.4,
+    "screw_hole_diameter": 2,
     "base_thickness": 3.0,
     "base_offset": 3.0,
     "base_rim_thickness": 5.0,
     "screw_cbore_diameter": 6.0,
     "screw_cbore_depth": 2.5,
-    "plate_holes": true,
+    "plate_holes": false,
     "plate_holes_xy_offset": [
         0.0,
         0.0
     ],
     "plate_holes_width": 14.3,
     "plate_holes_height": 14.3,
-    "plate_holes_diameter": 1.6,
-    "plate_holes_depth": 20.0,
+    "plate_holes_diameter": 1.3,
+    "plate_holes_depth": 4.0,
     "plate_pcb_clear": false,
     "plate_pcb_size": [
         18.5,

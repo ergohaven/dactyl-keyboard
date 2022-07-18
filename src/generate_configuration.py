@@ -42,17 +42,17 @@ shape_config = {
     'reduced_outer_cols': 2,
 
 
-    'thumb_offsets':  [6, -3, 5],
+    'thumb_offsets':  [6, 0, 6],
     'keyboard_z_offset':  (
         3  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
 
 
-    'extra_width': 2,  # extra space between the base of keys# original= 2
-    'extra_height': 1.0,  # original= 0.5
+    'extra_width': 1,  # extra space between the base of keys# original= 2
+    'extra_height': 0.5,  # original= 0.5
 
 
-    'web_thickness': 1.0 + 1.0,
+    'web_thickness': 2.0 + 1.1,
     'post_size': 0.1,
     # post_adj':  post_size / 2
     'post_adj': 0,
@@ -200,16 +200,16 @@ shape_config = {
     'wall_z_offset':  15,  # length of the first downward_sloping part of the wall
     'wall_x_offset':  5,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
     'wall_y_offset':  6,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
-    'left_wall_x_offset':  12,  # specific values for the left side due to the minimal wall.
+    'left_wall_x_offset':  6,  # specific values for the left side due to the minimal wall.
     'left_wall_z_offset':  3,  # specific values for the left side due to the minimal wall.
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_y_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_z_offset': 0,
-    'wall_thickness':  2.0,  # wall thickness parameter used on upper/mid stage of the wall
-    'wall_base_y_thickness':  2.0,  # wall thickness at the lower stage
-    'wall_base_x_thickness':  2.0,  # wall thickness at the lower stage
+    'wall_thickness':  2.5,  # wall thickness parameter used on upper/mid stage of the wall
+    'wall_base_y_thickness':  2.5,  # wall thickness at the lower stage
+    'wall_base_x_thickness':  2.5,  # wall thickness at the lower stage
 
-    'wall_base_back_thickness':  2.0,  # wall thickness at the lower stage in the specifically in back for interface.
+    'wall_base_back_thickness':  2.5,  # wall thickness at the lower stage in the specifically in back for interface.
 
     ## Settings for column_style == :fixed
     ## The defaults roughly match Maltron settings
@@ -355,15 +355,15 @@ shape_config = {
 
     'screws_offset': 'INSIDE', # 'OUTSIDE', 'INSIDE', 'ORIGINAL'
 
-    'screw_insert_height': 2.8,
+    'screw_insert_height': 3.6,
 
-    # 'screw_insert_bottom_radius': 5.31 / 2,  #Designed for inserts
-    # 'screw_insert_top_radius': 5.1 / 2,  #Designed for inserts
+    'screw_insert_bottom_radius': 5.1 / 2,  #Designed for inserts
+    'screw_insert_top_radius': 4.8 / 2,  #Designed for inserts
 
-    'screw_insert_bottom_radius': 2 / 2,  # Designed for self tapping
-    'screw_insert_top_radius': 2 / 2,  # Designed for self tapping
+    #'screw_insert_bottom_radius': 2.5 / 2,  # Designed for self tapping
+    #'screw_insert_top_radius': 2.5 / 2,  # Designed for self tapping
 
-    'screw_insert_outer_radius': 1.5,  # Common to keep interface to base
+    'screw_insert_outer_radius': 4,  # Common to keep interface to base
 
     # Does anyone even use these?  I think they just get in the way.
     'wire_post_height': 7,
@@ -403,7 +403,9 @@ shape_config = {
     "pcb_usb_hole_offset": [16, 0, 4.5],
     "pcb_usb_hole_z_offset": 2.5,
 
-    "wall_thinner_size": [33, 7, 2],
+    "support_planck_size": [33, 7, 2],
+
+    "wall_thinner_size": [33, 5, 10],
 
     "trrs_hole_size": [3, 20],
     "trrs_offset": [0, 0, 7],
@@ -417,7 +419,7 @@ shape_config = {
     ## Bottom Plate Dimensions
     ###################################
     # COMMON DIMENSION
-    'screw_hole_diameter': 1.4,
+    'screw_hole_diameter': 2,
     # USED FOR CADQUERY ONLY
     'base_thickness': 3.0, # thickness in the middle of the plate
     'base_offset': 3.0, # Both start flat/flush on the bottom.  This offsets the base up (if positive)
@@ -430,12 +432,12 @@ shape_config = {
     ###################################
     ## HOLES ON PLATE FOR PCB MOUNT
     ###################################
-    'plate_holes':  True,
+    'plate_holes':  False,
     'plate_holes_xy_offset': (0.0, 0.0),
     'plate_holes_width': 14.3,
     'plate_holes_height': 14.3,
-    'plate_holes_diameter': 1.6,
-    'plate_holes_depth': 20.0,
+    'plate_holes_diameter': 1.3,
+    'plate_holes_depth': 4.0,
 
     ###################################
     ## EXPERIMENTAL

@@ -1402,7 +1402,7 @@ def minidox_thumb_tr_place(shape):
 def minidox_thumb_ml_place(shape):
     shape = rotate(shape, [6, -34, 40])
     shape = translate(shape, thumborigin())
-    shape = translate(shape, [-53, -26, -12])
+    shape = translate(shape, [-50, -26, -11])
     return shape
 
 def minidox_thumb_1x_layout(shape):
@@ -3310,11 +3310,22 @@ def wall_thinner():
         (
             pcb_holder_position[0],
             pcb_holder_position[1] - wall_thinner_size[1]/2,
-            -wall_thinner_size[2] + pcb_holder_thickness,
+            wall_thinner_size[2]/2 + pcb_holder_thickness/2,
         )
     )
     return shape
 
+def support_planck():
+    debugprint('support_planck()')
+    shape = box(*support_planck_size)
+    shape = translate(shape,
+        (
+            pcb_holder_position[0],
+            pcb_holder_position[1] - support_planck_size[1]/2,
+            -support_planck_size[2] + pcb_holder_thickness,
+        )
+    )
+    return shape
 
 
 
@@ -3941,11 +3952,11 @@ def thumb_screw_insert(bottom_radius, top_radius, height, offset=None, side='rig
 def screw_insert_all_shapes(bottom_radius, top_radius, height, offset=0, side='right'):
     print('screw_insert_all_shapes()')
     shape = (
-        translate(screw_insert(0, -1, bottom_radius, top_radius, height, side=side), (0, -7, offset)),
-        translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (0, left_wall_lower_y_offset, offset)),
-        translate(screw_insert(5, 0, bottom_radius, top_radius, height, side=side), (0, 1.5, offset)),
+        translate(screw_insert(0, -1, bottom_radius, top_radius, height, side=side), (1.5, -8.5, offset)),
+        translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (2, left_wall_lower_y_offset, offset)),
+        translate(screw_insert(5, 0, bottom_radius, top_radius, height, side=side), (-1, 1.5, offset)),
         #translate(screw_insert(0, 6, bottom_radius, top_radius, height, side=side), (-1,-2, offset)),
-        translate(screw_insert(3, 4, bottom_radius, top_radius, height, side=side), (5, 2, offset)),
+        translate(screw_insert(3, 4, bottom_radius, top_radius, height, side=side), (5, 2.5, offset)),
         #translate(screw_insert(lastcol, cornerrow, bottom_radius, top_radius, height, side=side), (-0.5, 0, offset)),
         #translate(screw_insert_thumb(bottom_radius, top_radius, height), (0, 0, offset)),
     )
@@ -4057,7 +4068,8 @@ def model_side(side="right"):
         s2 = difference(s2, [pcb_usb_hole()])
         s2 = difference(s2, [trrs_hole()])
         s2 = union([s2, pcb_holder()])
-        s2 = union([s2, wall_thinner()])
+        s2 = difference(s2, [wall_thinner()])
+        s2 = union([s2, support_planck()])
         s2 = difference(s2, pcb_screw_hole())
 
     if controller_mount_type in [None, 'None']:
