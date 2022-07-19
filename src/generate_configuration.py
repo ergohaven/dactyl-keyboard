@@ -24,12 +24,12 @@ shape_config = {
     'show_caps': False,
     'show_pcbs': False, #only runs if caps are shown, easist place to initially inject geometry
 
-    'nrows':  5, #5,  # key rows
-    'ncols':  6, #6,  # key columns
+    'nrows':  4, #5,  # key rows
+    'ncols':  5, #6,  # key columns
 
     'alpha':  pi / 12.0,  # curvature of the columns
     'beta':  pi / 36.0,  # curvature of the rows
-    'centercol':  3,  # controls left_right tilt / tenting (higher number is more tenting)
+    'centercol':  1,  # controls left_right tilt / tenting (higher number is more tenting)
     'centerrow_offset':  3,  # rows from max, controls front_back tilt
     'tenting_angle':  pi / 18.0,  # or, change this for more precise tenting control
 
@@ -39,12 +39,12 @@ shape_config = {
     'column_style_gt5':  "orthographic",
     'column_style':  "standard",  # options include :standard, :orthographic, and :fixed
     'reduced_inner_cols': 2,  #currently supports 0 or 2 due to thumb cluster attachment
-    'reduced_outer_cols': 2,
+    'reduced_outer_cols': 1,
 
 
     'thumb_offsets':  [6, 0, 6],
     'keyboard_z_offset':  (
-        3  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
+        9  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
 
 
