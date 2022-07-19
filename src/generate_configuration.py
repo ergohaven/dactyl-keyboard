@@ -30,7 +30,7 @@ shape_config = {
     'alpha':  pi / 12.0,  # curvature of the columns
     'beta':  pi / 36.0,  # curvature of the rows
     'centercol':  1,  # controls left_right tilt / tenting (higher number is more tenting)
-    'centerrow_offset':  3,  # rows from max, controls front_back tilt
+    'centerrow_offset':  2.5,  # rows from max, controls front_back tilt
     'tenting_angle':  pi / 18.0,  # or, change this for more precise tenting control
 
     # symmetry states if it is a symmetric or asymmetric bui.  If asymmetric it doubles the generation time.
@@ -42,9 +42,9 @@ shape_config = {
     'reduced_outer_cols': 1,
 
 
-    'thumb_offsets':  [6, 0, 6],
+    'thumb_offsets':  [6, 0, -1],
     'keyboard_z_offset':  (
-        9  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
+        5  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
 
 
@@ -197,9 +197,9 @@ shape_config = {
 
 
 
-    'wall_z_offset':  4,  # length of the first downward_sloping part of the wall
-    'wall_x_offset':  2,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
-    'wall_y_offset':  4,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
+    'wall_z_offset':  3,  # length of the first downward_sloping part of the wall
+    'wall_x_offset':  1,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
+    'wall_y_offset':  1,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
     'left_wall_x_offset':  0,  # specific values for the left side due to the minimal wall.
     'left_wall_z_offset':  0,  # specific values for the left side due to the minimal wall.
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
@@ -355,15 +355,15 @@ shape_config = {
 
     'screws_offset': 'INSIDE', # 'OUTSIDE', 'INSIDE', 'ORIGINAL'
 
-    'screw_insert_height': 3.6,
+    'screw_insert_height': 1.5,
 
-    'screw_insert_bottom_radius': 5.1 / 2,  #Designed for inserts
-    'screw_insert_top_radius': 4.8 / 2,  #Designed for inserts
+    #'screw_insert_bottom_radius': 5.1 / 2,  #Designed for inserts
+    #'screw_insert_top_radius': 4.8 / 2,  #Designed for inserts
 
-    #'screw_insert_bottom_radius': 2.5 / 2,  # Designed for self tapping
-    #'screw_insert_top_radius': 2.5 / 2,  # Designed for self tapping
+    'screw_insert_bottom_radius': 2.5 / 2,  # Designed for self tapping
+    'screw_insert_top_radius': 2.5 / 2,  # Designed for self tapping
 
-    'screw_insert_outer_radius': 4,  # Common to keep interface to base
+    'screw_insert_outer_radius': 3,  # Common to keep interface to base
 
     # Does anyone even use these?  I think they just get in the way.
     'wire_post_height': 7,
@@ -462,11 +462,11 @@ shape_config = {
     ####################################
 
     'column_offsets':  [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 2.82, -4.5],
-        [0, 0, 0],
-        [0, -9, 5],# REDUCED STAGGER
+        [0, 0, 3],
+        [0, 0, 3],
+        [0, 2.82, 1],
+        [0, 0, 2],
+        [0, -9, 3],# REDUCED STAGGER
         [0, -9, 5],# REDUCED STAGGER
         [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
     ],

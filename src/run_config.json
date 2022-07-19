@@ -9,7 +9,7 @@
     "alpha": 0.26179916666666664,
     "beta": 0.08726638888888888,
     "centercol": 1,
-    "centerrow_offset": 3,
+    "centerrow_offset": 2.5,
     "tenting_angle": 0.17453277777777776,
     "symmetry": "symmetric",
     "column_style_gt5": "orthographic",
@@ -19,9 +19,9 @@
     "thumb_offsets": [
         6,
         0,
-        6
+        -1
     ],
-    "keyboard_z_offset": 9,
+    "keyboard_z_offset": 5,
     "extra_width": 1,
     "extra_height": 0.5,
     "web_thickness": 3.1,
@@ -281,9 +281,9 @@
     "first_1_5U_row": 0,
     "last_1_5U_row": 5,
     "skeletal": false,
-    "wall_z_offset": 4,
-    "wall_x_offset": 2,
-    "wall_y_offset": 4,
+    "wall_z_offset": 3,
+    "wall_x_offset": 1,
+    "wall_y_offset": 1,
     "left_wall_x_offset": 0,
     "left_wall_z_offset": 0,
     "left_wall_lower_x_offset": 0,
@@ -441,10 +441,10 @@
         }
     },
     "screws_offset": "INSIDE",
-    "screw_insert_height": 3.6,
-    "screw_insert_bottom_radius": 2.55,
-    "screw_insert_top_radius": 2.4,
-    "screw_insert_outer_radius": 4,
+    "screw_insert_height": 1.5,
+    "screw_insert_bottom_radius": 1.25,
+    "screw_insert_top_radius": 1.25,
+    "screw_insert_outer_radius": 3,
     "wire_post_height": 7,
     "wire_post_overhang": 3.5,
     "wire_post_diameter": 2.6,
@@ -548,27 +548,27 @@
         [
             0,
             0,
-            0
+            3
         ],
         [
             0,
             0,
-            0
+            3
         ],
         [
             0,
             2.82,
-            -4.5
+            1
         ],
         [
             0,
             0,
-            0
+            2
         ],
         [
             0,
             -9,
-            5
+            3
         ],
         [
             0,

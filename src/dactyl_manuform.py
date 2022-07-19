@@ -1388,13 +1388,13 @@ def mini_thumb_connectors():
 ############################
 
 def minidox_thumb_tl_place(shape):
-    shape = rotate(shape, [10, -23, 25])
+    shape = rotate(shape, [0, -23, 25])
     shape = translate(shape, thumborigin())
     shape = translate(shape, [-35, -16, -2])
     return shape
 
 def minidox_thumb_tr_place(shape):
-    shape = rotate(shape, [14, -15, 10])
+    shape = rotate(shape, [0, -15, 10])
     shape = translate(shape, thumborigin())
     shape = translate(shape, [-15, -10, 5])
     return shape
@@ -1410,7 +1410,7 @@ def minidox_thumb_1x_layout(shape):
     #return add([
         minidox_thumb_tr_place(rotate(shape, [0, 0, thumb_plate_tr_rotation])),
         minidox_thumb_tl_place(rotate(shape, [0, 0, thumb_plate_tl_rotation])),
-        minidox_thumb_ml_place(rotate(shape, [0, 0, thumb_plate_ml_rotation])),
+        #minidox_thumb_ml_place(rotate(shape, [0, 0, thumb_plate_ml_rotation])),
     ])
 
 
@@ -1419,7 +1419,7 @@ def minidox_thumb_fx_layout(shape):
     #return add([
         minidox_thumb_tr_place(rotate(shape, [0, 0, thumb_plate_tr_rotation])),
         minidox_thumb_tl_place(rotate(shape, [0, 0, thumb_plate_tl_rotation])),
-        minidox_thumb_ml_place(rotate(shape, [0, 0, thumb_plate_ml_rotation])),
+        #minidox_thumb_ml_place(rotate(shape, [0, 0, thumb_plate_ml_rotation])),
     ])
 
 def minidox_thumbcaps():
@@ -1491,8 +1491,6 @@ def minidox_thumb_connectors():
             [
                 minidox_thumb_tl_place(minidox_thumb_post_tl()),
                 minidox_thumb_tl_place(minidox_thumb_post_bl()),
-                minidox_thumb_ml_place(minidox_thumb_post_tr()),
-                minidox_thumb_ml_place(minidox_thumb_post_br()),
             ]
         )
     )
@@ -2997,14 +2995,16 @@ def minidox_thumb_walls(skeleton=False):
     shape = union([wall_brace(minidox_thumb_tr_place, 0, -1, minidox_thumb_post_br(), minidox_thumb_tr_place, 0, -1, minidox_thumb_post_bl())])
     shape = union([shape, wall_brace(minidox_thumb_tr_place, 0, -1, minidox_thumb_post_bl(), minidox_thumb_tl_place, 0, -1, minidox_thumb_post_br())])
     shape = union([shape, wall_brace(minidox_thumb_tl_place, 0, -1, minidox_thumb_post_br(), minidox_thumb_tl_place, 0, -1, minidox_thumb_post_bl())])
-    shape = union([shape, wall_brace(minidox_thumb_tl_place, 0, -1, minidox_thumb_post_bl(), minidox_thumb_ml_place, -1, -1, minidox_thumb_post_br())])
-    shape = union([shape, wall_brace(minidox_thumb_ml_place, -1, -1, minidox_thumb_post_br(), minidox_thumb_ml_place, 0, -1, minidox_thumb_post_bl())])
-    shape = union([shape, wall_brace(minidox_thumb_ml_place, 0, -1, minidox_thumb_post_bl(), minidox_thumb_ml_place, -1, 0, minidox_thumb_post_bl())])
+    shape = union([shape, wall_brace(minidox_thumb_tl_place, 0, -1, minidox_thumb_post_bl(), minidox_thumb_tl_place, -1, -1, minidox_thumb_post_br())])
+    shape = union([shape, wall_brace(minidox_thumb_tl_place, -1, -1, minidox_thumb_post_br(), minidox_thumb_tl_place, 0, -1, minidox_thumb_post_bl())])
+    shape = union([shape, wall_brace(minidox_thumb_tl_place, 0, -1, minidox_thumb_post_bl(), minidox_thumb_tl_place, -1, 0, minidox_thumb_post_bl())])
     # thumb, corners
-    shape = union([shape, wall_brace(minidox_thumb_ml_place, -1, 0, minidox_thumb_post_bl(), minidox_thumb_ml_place, -1, 0, minidox_thumb_post_tl())])
-    shape = union([shape, wall_brace(minidox_thumb_ml_place, -1, 0, minidox_thumb_post_tl(), minidox_thumb_ml_place, 0, 1, minidox_thumb_post_tl())])
+    shape = union([shape, wall_brace(minidox_thumb_tl_place, -1.1, 0, minidox_thumb_post_bl(), minidox_thumb_tl_place, -1, 0, minidox_thumb_post_tl())])
+    #shape = union([shape, wall_brace(minidox_thumb_tl_place, -1, 0, minidox_thumb_post_tl(), minidox_thumb_tl_place, 1, 1, minidox_thumb_post_tl())])
+
     # thumb, tweeners
-    shape = union([shape, wall_brace(minidox_thumb_ml_place, 0, 1, minidox_thumb_post_tr(), minidox_thumb_ml_place, 0, 1, minidox_thumb_post_tl())])
+    #shape = union([shape, wall_brace(minidox_thumb_tl_place, -5, 1, minidox_thumb_post_tr(), minidox_thumb_tl_place, 0, 1, minidox_thumb_post_tl())])
+
     shape = union([shape, wall_brace(minidox_thumb_tr_place, 0, -1, minidox_thumb_post_br(), (lambda sh: key_place(sh, 3, lastrow)), 0, -1, web_post_bl())])
 
 
@@ -3016,8 +3016,8 @@ def minidox_thumb_connection(side='right', skeleton=False):
         [
             left_key_place(translate(web_post(), wall_locate2(-1, 0)), cornerrow, -1, low_corner=True, side=side),
             left_key_place(translate(web_post(), wall_locate3(-1, 0)), cornerrow, -1, low_corner=True, side=side),
-            minidox_thumb_ml_place(translate(minidox_thumb_post_tr(), wall_locate2(-0.3, 1))),
-            minidox_thumb_ml_place(translate(minidox_thumb_post_tr(), wall_locate3(-0.3, 1))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(-18.8, 0))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-6.93, 0))),
         ]
     )])
 
@@ -3026,8 +3026,8 @@ def minidox_thumb_connection(side='right', skeleton=False):
         [
             left_key_place(translate(web_post(), wall_locate2(-1, 0)), cornerrow, -1, low_corner=True, side=side),
             left_key_place(translate(web_post(), wall_locate3(-1, 0)), cornerrow, -1, low_corner=True, side=side),
-            minidox_thumb_ml_place(translate(minidox_thumb_post_tr(), wall_locate2(-0.3, 1))),
-            minidox_thumb_ml_place(translate(minidox_thumb_post_tr(), wall_locate3(-0.3, 1))),
+            #minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(-20.8, 0))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-6.93, 0))),
             minidox_thumb_tl_place(minidox_thumb_post_tl()),
         ]
     )])
@@ -3056,11 +3056,11 @@ def minidox_thumb_connection(side='right', skeleton=False):
     shape = union([shape,
         hull_from_shapes(
         [
-            minidox_thumb_ml_place(minidox_thumb_post_tr()),
-            minidox_thumb_ml_place(translate(minidox_thumb_post_tr(), wall_locate1(0, 1))),
-            minidox_thumb_ml_place(translate(minidox_thumb_post_tr(), wall_locate2(0, 1))),
-            minidox_thumb_ml_place(translate(minidox_thumb_post_tr(), wall_locate3(0, 1))),
-            minidox_thumb_tl_place(minidox_thumb_post_tl()),
+            #minidox_thumb_tl_place(minidox_thumb_post_tr()),
+            #minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate1(0, 1))),
+            #minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(0, 1))),
+            #minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(0, 1))),
+            #minidox_thumb_tl_place(minidox_thumb_post_tl()),
         ]
     )])
 
@@ -3953,10 +3953,10 @@ def screw_insert_all_shapes(bottom_radius, top_radius, height, offset=0, side='r
     print('screw_insert_all_shapes()')
     shape = (
         #translate(screw_insert(0, -1, bottom_radius, top_radius, height, side=side), (1.5, -8.5, offset)),
-        translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (2, left_wall_lower_y_offset, offset)),
-        translate(screw_insert(5, 0, bottom_radius, top_radius, height, side=side), (-1, 1.5, offset)),
+        translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (1.5, left_wall_lower_y_offset, offset)),
+        translate(screw_insert(4, 0, bottom_radius, top_radius, height, side=side), (-1, 1.5, offset)),
         #translate(screw_insert(0, 6, bottom_radius, top_radius, height, side=side), (-1,-2, offset)),
-        translate(screw_insert(3, 4, bottom_radius, top_radius, height, side=side), (5, 2.5, offset)),
+        translate(screw_insert(3, 3, bottom_radius, top_radius, height, side=side), (6, 3, offset)),
         #translate(screw_insert(lastcol, cornerrow, bottom_radius, top_radius, height, side=side), (-0.5, 0, offset)),
         #translate(screw_insert_thumb(bottom_radius, top_radius, height), (0, 0, offset)),
     )
