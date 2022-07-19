@@ -197,19 +197,19 @@ shape_config = {
 
 
 
-    'wall_z_offset':  15,  # length of the first downward_sloping part of the wall
-    'wall_x_offset':  5,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
-    'wall_y_offset':  6,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
-    'left_wall_x_offset':  6,  # specific values for the left side due to the minimal wall.
-    'left_wall_z_offset':  3,  # specific values for the left side due to the minimal wall.
+    'wall_z_offset':  4,  # length of the first downward_sloping part of the wall
+    'wall_x_offset':  2,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
+    'wall_y_offset':  4,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
+    'left_wall_x_offset':  0,  # specific values for the left side due to the minimal wall.
+    'left_wall_z_offset':  0,  # specific values for the left side due to the minimal wall.
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_y_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_z_offset': 0,
-    'wall_thickness':  2.5,  # wall thickness parameter used on upper/mid stage of the wall
-    'wall_base_y_thickness':  2.5,  # wall thickness at the lower stage
-    'wall_base_x_thickness':  2.5,  # wall thickness at the lower stage
+    'wall_thickness':  2,  # wall thickness parameter used on upper/mid stage of the wall
+    'wall_base_y_thickness':  2,  # wall thickness at the lower stage
+    'wall_base_x_thickness':  2,  # wall thickness at the lower stage
 
-    'wall_base_back_thickness':  2.5,  # wall thickness at the lower stage in the specifically in back for interface.
+    'wall_base_back_thickness':  2,  # wall thickness at the lower stage in the specifically in back for interface.
 
     ## Settings for column_style == :fixed
     ## The defaults roughly match Maltron settings
@@ -395,7 +395,7 @@ shape_config = {
     ###################################
     ## PCB Screw Mount               ##
     ###################################
-    "pcb_mount_ref_offset": [1, -5, 0],
+    "pcb_mount_ref_offset": [0.5, -5, 0],
     "pcb_holder_size": [34.6, 0, 3],
     "pcb_holder_offset": [9.9, 3, 0],
 
@@ -410,7 +410,8 @@ shape_config = {
     "trrs_hole_size": [3, 20],
     "trrs_offset": [0, 0, 7],
 
-    "pcb_screw_hole_size": [.7, 10],
+    "pcb_screw_hole_size": [.7, 5],
+    "pcb_screw_hole_cap_size": [1, 1],
     "pcb_screw_x_offsets": [- 4.5, 8.75, 23], # for the screw positions off of reference
     "pcb_screw_y_offset": -1.5,
 

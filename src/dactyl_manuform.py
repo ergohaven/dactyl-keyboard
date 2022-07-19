@@ -3952,7 +3952,7 @@ def thumb_screw_insert(bottom_radius, top_radius, height, offset=None, side='rig
 def screw_insert_all_shapes(bottom_radius, top_radius, height, offset=0, side='right'):
     print('screw_insert_all_shapes()')
     shape = (
-        translate(screw_insert(0, -1, bottom_radius, top_radius, height, side=side), (1.5, -8.5, offset)),
+        #translate(screw_insert(0, -1, bottom_radius, top_radius, height, side=side), (1.5, -8.5, offset)),
         translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (2, left_wall_lower_y_offset, offset)),
         translate(screw_insert(5, 0, bottom_radius, top_radius, height, side=side), (-1, 1.5, offset)),
         #translate(screw_insert(0, 6, bottom_radius, top_radius, height, side=side), (-1,-2, offset)),
@@ -4367,3 +4367,4 @@ def run():
 # export_file(shape=base, fname=path.join(save_path, config_name + r"_plate"))
 if __name__ == '__main__':
     run()
+
