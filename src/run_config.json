@@ -281,18 +281,18 @@
     "first_1_5U_row": 0,
     "last_1_5U_row": 5,
     "skeletal": false,
-    "wall_z_offset": 15,
-    "wall_x_offset": 5,
-    "wall_y_offset": 6,
-    "left_wall_x_offset": 6,
-    "left_wall_z_offset": 3,
+    "wall_z_offset": 4,
+    "wall_x_offset": 2,
+    "wall_y_offset": 4,
+    "left_wall_x_offset": 0,
+    "left_wall_z_offset": 0,
     "left_wall_lower_x_offset": 0,
     "left_wall_lower_y_offset": 0,
     "left_wall_lower_z_offset": 0,
-    "wall_thickness": 2.5,
-    "wall_base_y_thickness": 2.5,
-    "wall_base_x_thickness": 2.5,
-    "wall_base_back_thickness": 2.5,
+    "wall_thickness": 2,
+    "wall_base_y_thickness": 2,
+    "wall_base_x_thickness": 2,
+    "wall_base_back_thickness": 2,
     "fixed_angles": [
         0.17453277777777776,
         0.17453277777777776,
@@ -454,7 +454,7 @@
     "external_holder_xoffset": -5.0,
     "external_holder_yoffset": -4.5,
     "pcb_mount_ref_offset": [
-        1,
+        0.5,
         -5,
         0
     ],
@@ -500,7 +500,11 @@
     ],
     "pcb_screw_hole_size": [
         0.7,
-        10
+        5
+    ],
+    "pcb_screw_hole_cap_size": [
+        1,
+        1
     ],
     "pcb_screw_x_offsets": [
         -4.5,
