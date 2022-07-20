@@ -3309,7 +3309,7 @@ def wall_thinner():
     shape = translate(shape,
         (
             pcb_holder_position[0],
-            pcb_holder_position[1] - wall_thinner_size[1]/2,
+            pcb_holder_position[1] - wall_thinner_size[1]/2-1,
             wall_thinner_size[2]/2 + pcb_holder_thickness/2,
         )
     )
@@ -3321,7 +3321,7 @@ def support_planck():
     shape = translate(shape,
         (
             pcb_holder_position[0],
-            pcb_holder_position[1] - support_planck_size[1]/2,
+            pcb_holder_position[1] - support_planck_size[1]/2+0.5,
             -support_planck_size[2] + pcb_holder_thickness,
         )
     )

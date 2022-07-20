@@ -48,11 +48,11 @@ shape_config = {
     ),
 
 
-    'extra_width': 1,  # extra space between the base of keys# original= 2
+    'extra_width': 2,  # extra space between the base of keys# original= 2
     'extra_height': 0.5,  # original= 0.5
 
 
-    'web_thickness': 2.0 + 1.1,
+    'web_thickness': 2.5 + 1.1,
     'post_size': 0.1,
     # post_adj':  post_size / 2
     'post_adj': 0,
@@ -205,11 +205,11 @@ shape_config = {
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_y_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_z_offset': 0,
-    'wall_thickness':  2,  # wall thickness parameter used on upper/mid stage of the wall
-    'wall_base_y_thickness':  2,  # wall thickness at the lower stage
-    'wall_base_x_thickness':  2,  # wall thickness at the lower stage
+    'wall_thickness':  2.5,  # wall thickness parameter used on upper/mid stage of the wall
+    'wall_base_y_thickness':  2.5,  # wall thickness at the lower stage
+    'wall_base_x_thickness':  2.5,  # wall thickness at the lower stage
 
-    'wall_base_back_thickness':  2,  # wall thickness at the lower stage in the specifically in back for interface.
+    'wall_base_back_thickness':  2.5,  # wall thickness at the lower stage in the specifically in back for interface.
 
     ## Settings for column_style == :fixed
     ## The defaults roughly match Maltron settings
@@ -403,9 +403,9 @@ shape_config = {
     "pcb_usb_hole_offset": [16, 0, 4.5],
     "pcb_usb_hole_z_offset": 2.5,
 
-    "support_planck_size": [33, 7, 2],
+    "support_planck_size": [35, 7, 2],
 
-    "wall_thinner_size": [33, 5, 10],
+    "wall_thinner_size": [33, 4, 9],
 
     "trrs_hole_size": [3, 20],
     "trrs_offset": [0, 0, 7],
@@ -464,7 +464,7 @@ shape_config = {
     'column_offsets':  [
         [0, 0, 0],
         [0, 0, 0],
-        [0, 2.82, -4.5],
+        [0, 2.82, -3],
         [0, 0, 0],
         [0, -9, 5],# REDUCED STAGGER
         [0, -9, 5],# REDUCED STAGGER

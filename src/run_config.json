@@ -22,9 +22,9 @@
         6
     ],
     "keyboard_z_offset": 3,
-    "extra_width": 1,
+    "extra_width": 2,
     "extra_height": 0.5,
-    "web_thickness": 3.1,
+    "web_thickness": 3.6,
     "post_size": 0.1,
     "post_adj": 0,
     "thumb_style": "MINIDOX",
@@ -289,10 +289,10 @@
     "left_wall_lower_x_offset": 0,
     "left_wall_lower_y_offset": 0,
     "left_wall_lower_z_offset": 0,
-    "wall_thickness": 2,
-    "wall_base_y_thickness": 2,
-    "wall_base_x_thickness": 2,
-    "wall_base_back_thickness": 2,
+    "wall_thickness": 2.5,
+    "wall_base_y_thickness": 2.5,
+    "wall_base_x_thickness": 2.5,
+    "wall_base_back_thickness": 2.5,
     "fixed_angles": [
         0.17453277777777776,
         0.17453277777777776,
@@ -480,14 +480,14 @@
     ],
     "pcb_usb_hole_z_offset": 2.5,
     "support_planck_size": [
-        33,
+        35,
         7,
         2
     ],
     "wall_thinner_size": [
         33,
-        5,
-        10
+        4,
+        9
     ],
     "trrs_hole_size": [
         3,
@@ -558,7 +558,7 @@
         [
             0,
             2.82,
-            -4.5
+            -3
         ],
         [
             0,
