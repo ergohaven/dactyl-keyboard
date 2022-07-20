@@ -3016,8 +3016,8 @@ def minidox_thumb_connection(side='right', skeleton=False):
         [
             left_key_place(translate(web_post(), wall_locate2(-1, 0)), cornerrow, -1, low_corner=True, side=side),
             left_key_place(translate(web_post(), wall_locate3(-1, 0)), cornerrow, -1, low_corner=True, side=side),
-            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(-18.8, 0))),
-            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-6.93, 0))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(-18.9, 0))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-6.09, 0))),
         ]
     )])
 
@@ -3027,7 +3027,7 @@ def minidox_thumb_connection(side='right', skeleton=False):
             left_key_place(translate(web_post(), wall_locate2(-1, 0)), cornerrow, -1, low_corner=True, side=side),
             left_key_place(translate(web_post(), wall_locate3(-1, 0)), cornerrow, -1, low_corner=True, side=side),
             #minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(-20.8, 0))),
-            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-6.93, 0))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-6.09, 0))),
             minidox_thumb_tl_place(minidox_thumb_post_tl()),
         ]
     )])
@@ -3309,7 +3309,7 @@ def wall_thinner():
     shape = translate(shape,
         (
             pcb_holder_position[0],
-            pcb_holder_position[1] - wall_thinner_size[1]/2,
+            pcb_holder_position[1] - wall_thinner_size[1]/2-1,
             wall_thinner_size[2]/2 + pcb_holder_thickness/2,
         )
     )
@@ -3321,7 +3321,7 @@ def support_planck():
     shape = translate(shape,
         (
             pcb_holder_position[0],
-            pcb_holder_position[1] - support_planck_size[1]/2,
+            pcb_holder_position[1] - support_planck_size[1]/2+0.5,
             -support_planck_size[2] + pcb_holder_thickness,
         )
     )

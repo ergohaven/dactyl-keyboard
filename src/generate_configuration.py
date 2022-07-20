@@ -48,11 +48,11 @@ shape_config = {
     ),
 
 
-    'extra_width': 1,  # extra space between the base of keys# original= 2
+    'extra_width': 2,  # extra space between the base of keys# original= 2
     'extra_height': 0.5,  # original= 0.5
 
 
-    'web_thickness': 2.0 + 1.1,
+    'web_thickness': 2.5 + 1.1,
     'post_size': 0.1,
     # post_adj':  post_size / 2
     'post_adj': 0,
@@ -205,11 +205,11 @@ shape_config = {
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_y_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_z_offset': 0,
-    'wall_thickness':  2,  # wall thickness parameter used on upper/mid stage of the wall
-    'wall_base_y_thickness':  2,  # wall thickness at the lower stage
-    'wall_base_x_thickness':  2,  # wall thickness at the lower stage
+    'wall_thickness':  2.5,  # wall thickness parameter used on upper/mid stage of the wall
+    'wall_base_y_thickness':  2.5,  # wall thickness at the lower stage
+    'wall_base_x_thickness':  2.5,  # wall thickness at the lower stage
 
-    'wall_base_back_thickness':  2,  # wall thickness at the lower stage in the specifically in back for interface.
+    'wall_base_back_thickness':  2.5,  # wall thickness at the lower stage in the specifically in back for interface.
 
     ## Settings for column_style == :fixed
     ## The defaults roughly match Maltron settings
