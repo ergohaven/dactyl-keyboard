@@ -42,9 +42,9 @@ shape_config = {
     'reduced_outer_cols': 1,
 
 
-    'thumb_offsets':  [6, 0, -1],
+    'thumb_offsets':  [6, -1, -1],
     'keyboard_z_offset':  (
-        5  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
+        6  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
 
 
@@ -52,7 +52,7 @@ shape_config = {
     'extra_height': 0.5,  # original= 0.5
 
 
-    'web_thickness': 2.5 + 1.1,
+    'web_thickness': 3 + 1.1,
     'post_size': 0.1,
     # post_adj':  post_size / 2
     'post_adj': 0,
@@ -197,9 +197,9 @@ shape_config = {
 
 
 
-    'wall_z_offset':  3,  # length of the first downward_sloping part of the wall
-    'wall_x_offset':  1,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
-    'wall_y_offset':  1,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
+    'wall_z_offset':  2,  # length of the first downward_sloping part of the wall
+    'wall_x_offset':  2,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
+    'wall_y_offset':  2,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
     'left_wall_x_offset':  0,  # specific values for the left side due to the minimal wall.
     'left_wall_z_offset':  0,  # specific values for the left side due to the minimal wall.
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
@@ -412,6 +412,7 @@ shape_config = {
 
     "pcb_screw_hole_size": [.7, 5],
     "pcb_screw_hole_cap_size": [1, 1],
+
     "pcb_screw_x_offsets": [- 4.5, 8.75, 23], # for the screw positions off of reference
     "pcb_screw_y_offset": -1.5,
 

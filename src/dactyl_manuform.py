@@ -3016,8 +3016,8 @@ def minidox_thumb_connection(side='right', skeleton=False):
         [
             left_key_place(translate(web_post(), wall_locate2(-1, 0)), cornerrow, -1, low_corner=True, side=side),
             left_key_place(translate(web_post(), wall_locate3(-1, 0)), cornerrow, -1, low_corner=True, side=side),
-            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(-18.9, 0))),
-            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-6.09, 0))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(-11.15, 0))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-4.4, 0))),
         ]
     )])
 
@@ -3026,8 +3026,8 @@ def minidox_thumb_connection(side='right', skeleton=False):
         [
             left_key_place(translate(web_post(), wall_locate2(-1, 0)), cornerrow, -1, low_corner=True, side=side),
             left_key_place(translate(web_post(), wall_locate3(-1, 0)), cornerrow, -1, low_corner=True, side=side),
-            #minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(-20.8, 0))),
-            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-6.09, 0))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate2(-11.1, 0))),
+            minidox_thumb_tl_place(translate(minidox_thumb_post_tr(), wall_locate3(-4.95, 0))),
             minidox_thumb_tl_place(minidox_thumb_post_tl()),
         ]
     )])
@@ -3361,8 +3361,18 @@ def pcb_screw_hole():
     hole = translate(hole, (0, 0, pcb_screw_hole_size[1]/2-.1))
     for offset in pcb_screw_x_offsets:
         holes.append(translate(hole, (offset, 0, 0)))
-
     return holes
+
+def pcb_screw_hole_cap():
+    debugprint('pcb_screw_hole_cap()')
+    holes = []
+    hole = cylinder(*pcb_screw_hole_cap_size)
+    hole = translate(hole, pcb_screw_position)
+    hole = translate(hole, (0, 0, pcb_screw_hole_cap_size[1]/2-.1))
+    for offset in pcb_screw_x_offsets:
+        holes.append(translate(hole, (offset, 0, 0)))
+    return holes
+
 
 
 if oled_center_row is not None:
@@ -4071,6 +4081,7 @@ def model_side(side="right"):
         s2 = difference(s2, [wall_thinner()])
         s2 = union([s2, support_planck()])
         s2 = difference(s2, pcb_screw_hole())
+        s2 = difference(s2, pcb_screw_hole_cap())
 
     if controller_mount_type in [None, 'None']:
         0 # do nothing, only here to expressly state inaction.
