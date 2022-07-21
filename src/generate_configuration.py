@@ -44,7 +44,7 @@ shape_config = {
 
     'thumb_offsets':  [6, 0, 6],
     'keyboard_z_offset':  (
-        3  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
+        4  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
 
 
@@ -464,8 +464,8 @@ shape_config = {
     'column_offsets':  [
         [0, 0, 0],
         [0, 0, 0],
-        [0, 2.82, -3],
-        [0, 0, 0],
+        [0, 2.82, -1],
+        [0, 0, 1],
         [0, -9, 5],# REDUCED STAGGER
         [0, -9, 5],# REDUCED STAGGER
         [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)

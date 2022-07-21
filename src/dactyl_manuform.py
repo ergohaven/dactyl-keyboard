@@ -1390,7 +1390,7 @@ def mini_thumb_connectors():
 def minidox_thumb_tl_place(shape):
     shape = rotate(shape, [10, -23, 25])
     shape = translate(shape, thumborigin())
-    shape = translate(shape, [-35, -16, -2])
+    shape = translate(shape, [-34.5 -16, -2])
     return shape
 
 def minidox_thumb_tr_place(shape):
@@ -3361,7 +3361,16 @@ def pcb_screw_hole():
     hole = translate(hole, (0, 0, pcb_screw_hole_size[1]/2-.1))
     for offset in pcb_screw_x_offsets:
         holes.append(translate(hole, (offset, 0, 0)))
+    return holes
 
+def pcb_screw_hole_cap():
+    debugprint('pcb_screw_hole_cap()')
+    holes = []
+    hole = cylinder(*pcb_screw_hole_cap_size)
+    hole = translate(hole, pcb_screw_position)
+    hole = translate(hole, (0, 0, pcb_screw_hole_cap_size[1]/2-.1))
+    for offset in pcb_screw_x_offsets:
+        holes.append(translate(hole, (offset, 0, 0)))
     return holes
 
 
@@ -4071,6 +4080,7 @@ def model_side(side="right"):
         s2 = difference(s2, [wall_thinner()])
         s2 = union([s2, support_planck()])
         s2 = difference(s2, pcb_screw_hole())
+        s2 = difference(s2, pcb_screw_hole_cap())
 
     if controller_mount_type in [None, 'None']:
         0 # do nothing, only here to expressly state inaction.
