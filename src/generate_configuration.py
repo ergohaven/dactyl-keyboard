@@ -408,7 +408,8 @@ shape_config = {
     "wall_thinner_size": [33, 5, 10],
 
     "trrs_hole_size": [3, 20],
-    "trrs_offset": [0, 0, 7],
+    "trrs_offset": [0, 0, 7], #left
+    #"trrs_offset": [1, 0, 7], #right
 
     "pcb_screw_hole_size": [.7, 5],
     "pcb_screw_hole_cap_size": [1, 1],
