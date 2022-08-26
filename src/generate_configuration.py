@@ -1,4 +1,4 @@
-import sys
+ifile:///home/j/keyboards/git/endgame/things/DM_left.stepmport sys
 import getopt
 import os
 import json
@@ -396,7 +396,7 @@ shape_config = {
     ## PCB Screw Mount               ##
     ###################################
     "pcb_mount_ref_offset": [0.5, -5, 0],
-    "pcb_holder_size": [34.6, 0, 3],
+    "pcb_holder_size": [34.6, 0.1, 3],
     "pcb_holder_offset": [9.9, 3, 0],
 
     "pcb_usb_hole_size": [9.3, 10.0, 4.5],
