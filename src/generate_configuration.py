@@ -10,8 +10,8 @@ r2d = 180 / pi
 
 shape_config = {
 
-     #'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
-     'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+     'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+     #'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
 
 
     ######################
@@ -396,7 +396,9 @@ shape_config = {
     ## PCB Screw Mount               ##
     ###################################
     "pcb_mount_ref_offset": [0.5, -5, 0],
-    "pcb_holder_size": [34.6, 0, 3],
+
+    "pcb_holder_size": [34.6, 0.1, 3],
+
     "pcb_holder_offset": [9.9, 3, 0],
 
     "pcb_usb_hole_size": [9.3, 10.0, 4.5],

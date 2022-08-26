@@ -460,7 +460,7 @@
     ],
     "pcb_holder_size": [
         34.6,
-        0,
+        0.1,
         3
     ],
     "pcb_holder_offset": [

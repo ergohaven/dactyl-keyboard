@@ -4339,9 +4339,9 @@ def run():
     export_dxf(shape=base, fname=path.join(save_path, config_name + r"_right_plate"))
 
     if symmetry == "asymmetric":
-        mod_l, tmb_l = model_side(side="left")
-        export_file(shape=mod_l, fname=path.join(save_path, config_name + r"_left"))
-        export_file(shape=tmb_l, fname=path.join(save_path, config_name + r"_thumb_left"))
+  #      mod_l, tmb_l = model_side(side="left")
+  #      export_file(shape=mod_l, fname=path.join(save_path, config_name + r"_left"))
+  #      export_file(shape=tmb_l, fname=path.join(save_path, config_name + r"_thumb_left"))
 
         #base_l = mirror(baseplate(mod_l, tmb_l, side='left'), 'YZ')
         base_l = mirror(baseplate(side='left'), 'YZ')
@@ -4358,20 +4358,20 @@ def run():
 
 
 
-    if oled_mount_type == 'UNDERCUT':
-        export_file(shape=oled_undercut_mount_frame()[1], fname=path.join(save_path, config_name + r"_oled_undercut_test"))
+    #if oled_mount_type == 'UNDERCUT':
+        #export_file(shape=oled_undercut_mount_frame()[1], fname=path.join(save_path, config_name + r"_oled_undercut_test"))
 
-    if oled_mount_type == 'SLIDING':
-        export_file(shape=oled_sliding_mount_frame()[1], fname=path.join(save_path, config_name + r"_oled_sliding_test"))
+    #if oled_mount_type == 'SLIDING':
+        #export_file(shape=oled_sliding_mount_frame()[1], fname=path.join(save_path, config_name + r"_oled_sliding_test"))
 
-    if oled_mount_type == 'CLIP':
-        oled_mount_location_xyz = (0.0, 0.0, -oled_mount_depth / 2)
-        oled_mount_rotation_xyz = (0.0, 0.0, 0.0)
-        export_file(shape=oled_clip(), fname=path.join(save_path, config_name + r"_oled_clip"))
-        export_file(shape=oled_clip_mount_frame()[1],
-                            fname=path.join(save_path, config_name + r"_oled_clip_test"))
-        export_file(shape=union((oled_clip_mount_frame()[1], oled_clip())),
-                            fname=path.join(save_path, config_name + r"_oled_clip_assy_test"))
+    #if oled_mount_type == 'CLIP':
+        #oled_mount_location_xyz = (0.0, 0.0, -oled_mount_depth / 2)
+        #oled_mount_rotation_xyz = (0.0, 0.0, 0.0)
+        #export_file(shape=oled_clip(), fname=path.join(save_path, config_name + r"_oled_clip"))
+        #export_file(shape=oled_clip_mount_frame()[1],
+                            #fname=path.join(save_path, config_name + r"_oled_clip_test"))
+        #export_file(shape=union((oled_clip_mount_frame()[1], oled_clip())),
+                            #fname=path.join(save_path, config_name + r"_oled_clip_assy_test"))
 
 # base = baseplate()
 # export_file(shape=base, fname=path.join(save_path, config_name + r"_plate"))
