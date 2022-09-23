@@ -42,17 +42,17 @@ shape_config = {
     'reduced_outer_cols': 2,
 
 
-    'thumb_offsets':  [6, 0, 6],
+    'thumb_offsets':  [4, 0, 6],
     'keyboard_z_offset':  (
         4  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
 
 
-    'extra_width': 2,  # extra space between the base of keys# original= 2
-    'extra_height': 0.5,  # original= 0.5
+    'extra_width': 1.7,  # extra space between the base of keys# original= 2
+    'extra_height': 0.43,  # original= 0.5
 
 
-    'web_thickness': 2.5 + 1.1,
+    'web_thickness': 5,
     'post_size': 0.1,
     # post_adj':  post_size / 2
     'post_adj': 0,
@@ -198,8 +198,8 @@ shape_config = {
 
 
     'wall_z_offset':  4,  # length of the first downward_sloping part of the wall
-    'wall_x_offset':  2,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
-    'wall_y_offset':  4,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
+    'wall_x_offset':  3.5,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
+    'wall_y_offset':  5,  # offset in the x and/or y direction for the first downward_sloping part of the wall (negative)
     'left_wall_x_offset':  0,  # specific values for the left side due to the minimal wall.
     'left_wall_z_offset':  0,  # specific values for the left side due to the minimal wall.
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
@@ -238,8 +238,8 @@ shape_config = {
     # 'plate_style':  'NUB',
     'plate_style': 'HOLE',
 
-    'hole_keyswitch_height':  13.8,
-    'hole_keyswitch_width':  13.8,
+    'hole_keyswitch_height':  13.95,
+    'hole_keyswitch_width':  13.95,
 
     'nub_keyswitch_height':  14.4,
     'nub_keyswitch_width':  14.4,
@@ -353,17 +353,17 @@ shape_config = {
         }
     },
 
-    'screws_offset': 'INSIDE', # 'OUTSIDE', 'INSIDE', 'ORIGINAL'
+    'screws_offset': 'OUTSIDE', # 'OUTSIDE', 'INSIDE', 'ORIGINAL'
 
     'screw_insert_height': 3.6,
 
-    'screw_insert_bottom_radius': 5.1 / 2,  #Designed for inserts
-    'screw_insert_top_radius': 4.8 / 2,  #Designed for inserts
+    #'screw_insert_bottom_radius': 5.1 / 2,  #Designed for inserts
+    #'screw_insert_top_radius': 4.8 / 2,  #Designed for inserts
 
-    #'screw_insert_bottom_radius': 2.5 / 2,  # Designed for self tapping
-    #'screw_insert_top_radius': 2.5 / 2,  # Designed for self tapping
+    'screw_insert_bottom_radius': 2.5 / 2,  # Designed for self tapping
+    'screw_insert_top_radius': 2.5 / 2,  # Designed for self tapping
 
-    'screw_insert_outer_radius': 4,  # Common to keep interface to base
+    'screw_insert_outer_radius': 2,  # Common to keep interface to base
 
     # Does anyone even use these?  I think they just get in the way.
     'wire_post_height': 7,
