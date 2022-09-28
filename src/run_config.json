@@ -17,19 +17,19 @@
     "reduced_inner_cols": 2,
     "reduced_outer_cols": 2,
     "thumb_offsets": [
-        4,
+        5,
         0,
         6
     ],
     "keyboard_z_offset": 4,
-    "extra_width": 1.7,
-    "extra_height": 0.43,
+    "extra_width": 1.8,
+    "extra_height": 0.1,
     "web_thickness": 5,
     "post_size": 0.1,
     "post_adj": 0,
     "thumb_style": "MINIDOX",
     "default_1U_cluster": true,
-    "minidox_Usize": 1.2,
+    "minidox_Usize": 1.3,
     "mini_index_key": true,
     "default_thumb_screw_xy_locations": [
         [
@@ -440,7 +440,7 @@
             "oled_clip_z_gap": 0.2
         }
     },
-    "screws_offset": "OUTSIDE",
+    "screws_offset": "INSIDE",
     "screw_insert_height": 3.6,
     "screw_insert_bottom_radius": 1.25,
     "screw_insert_top_radius": 1.25,
@@ -486,8 +486,8 @@
     ],
     "wall_thinner_size": [
         33,
-        4,
-        9
+        5.5,
+        15
     ],
     "trrs_hole_size": [
         3,
@@ -508,7 +508,7 @@
     ],
     "pcb_screw_x_offsets": [
         -4.5,
-        8.75,
+        3.75,
         23
     ],
     "pcb_screw_y_offset": -1.5,
@@ -561,17 +561,17 @@
             -1
         ],
         [
-            0,
+            0.7,
             0,
             1
         ],
         [
-            0,
+            0.7,
             -9,
             5
         ],
         [
-            0,
+            0.7,
             -9,
             5
         ],

@@ -3309,8 +3309,8 @@ def wall_thinner():
     shape = translate(shape,
         (
             pcb_holder_position[0],
-            pcb_holder_position[1] - wall_thinner_size[1]/2-1,
-            wall_thinner_size[2]/2 + pcb_holder_thickness/2,
+            pcb_holder_position[1] - wall_thinner_size[1]/2+0,
+            wall_thinner_size[2]/2 + pcb_holder_thickness/2-3,
         )
     )
     return shape
@@ -3961,11 +3961,11 @@ def thumb_screw_insert(bottom_radius, top_radius, height, offset=None, side='rig
 def screw_insert_all_shapes(bottom_radius, top_radius, height, offset=0, side='right'):
     print('screw_insert_all_shapes()')
     shape = (
-        #translate(screw_insert(0, -1, bottom_radius, top_radius, height, side=side), (1.5, -8.5, offset)),
-        translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (2, left_wall_lower_y_offset, offset)),
-        translate(screw_insert(5, 0, bottom_radius, top_radius, height, side=side), (-1, 1.5, offset)),
-        #translate(screw_insert(0, 6, bottom_radius, top_radius, height, side=side), (-1,-2, offset)),
-        translate(screw_insert(3, 4, bottom_radius, top_radius, height, side=side), (5, 2.5, offset)),
+        translate(screw_insert(0, 0, bottom_radius, top_radius, height, side=side), (-2, -8.5, offset)),
+        translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (0, left_wall_lower_y_offset-4, offset)),
+        translate(screw_insert(5, 0, bottom_radius, top_radius, height, side=side), (0, 6, offset)),
+        #translate(screw_insert(-1, 4, bottom_radius, top_radius, height, side=side), (-1,-12, offset)),
+        translate(screw_insert(3, 4, bottom_radius, top_radius, height, side=side), (5, 1, offset)),
         #translate(screw_insert(lastcol, cornerrow, bottom_radius, top_radius, height, side=side), (-0.5, 0, offset)),
         #translate(screw_insert_thumb(bottom_radius, top_radius, height), (0, 0, offset)),
     )
@@ -4078,7 +4078,7 @@ def model_side(side="right"):
         s2 = difference(s2, [trrs_hole()])
         s2 = union([s2, pcb_holder()])
         s2 = difference(s2, [wall_thinner()])
-        s2 = union([s2, support_planck()])
+        #s2 = union([s2, support_planck()])
         s2 = difference(s2, pcb_screw_hole())
         s2 = difference(s2, pcb_screw_hole_cap())
 

@@ -42,14 +42,14 @@ shape_config = {
     'reduced_outer_cols': 2,
 
 
-    'thumb_offsets':  [4, 0, 6],
+    'thumb_offsets':  [5, 0, 6],
     'keyboard_z_offset':  (
         4  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
 
 
-    'extra_width': 1.7,  # extra space between the base of keys# original= 2
-    'extra_height': 0.43,  # original= 0.5
+    'extra_width': 1.8,  # extra space between the base of keys# original= 2
+    'extra_height': 0.1,  # original= 0.5
 
 
     'web_thickness': 5,
@@ -65,7 +65,7 @@ shape_config = {
     'thumb_style': 'MINIDOX',
     'default_1U_cluster': True, # only used with default, makes top right thumb cluster key 1U
     # Thumb key size.  May need slight oversizing, check w/ caps.  Additional spacing will be automatically added for larger keys.
-    'minidox_Usize': 1.2,
+    'minidox_Usize': 1.3,
     # Thumb plate rotations, anything other than 90 degree increments WILL NOT WORK.
 
     'mini_index_key': True,
@@ -353,7 +353,7 @@ shape_config = {
         }
     },
 
-    'screws_offset': 'OUTSIDE', # 'OUTSIDE', 'INSIDE', 'ORIGINAL'
+    'screws_offset': 'INSIDE', # 'OUTSIDE', 'INSIDE', 'ORIGINAL'
 
     'screw_insert_height': 3.6,
 
@@ -407,14 +407,14 @@ shape_config = {
 
     "support_planck_size": [35, 7, 2],
 
-    "wall_thinner_size": [33, 4, 9],
+    "wall_thinner_size": [33, 5.5, 15],
 
     "trrs_hole_size": [3, 20],
     "trrs_offset": [0, 0, 7],
 
     "pcb_screw_hole_size": [.7, 5],
     "pcb_screw_hole_cap_size": [1, 1],
-    "pcb_screw_x_offsets": [- 4.5, 8.75, 23], # for the screw positions off of reference
+    "pcb_screw_x_offsets": [-4.5, 3.75, 23], # for the screw positions off of reference
     "pcb_screw_y_offset": -1.5,
 
 
@@ -467,9 +467,9 @@ shape_config = {
         [0, 0, 0],
         [0, 0, 0],
         [0, 2.82, -1],
-        [0, 0, 1],
-        [0, -9, 5],# REDUCED STAGGER
-        [0, -9, 5],# REDUCED STAGGER
+        [0.7, 0, 1],
+        [0.7, -9, 5],# REDUCED STAGGER
+        [0.7, -9, 5],# REDUCED STAGGER
         [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
     ],
 
