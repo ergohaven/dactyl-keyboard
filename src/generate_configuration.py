@@ -1,4 +1,4 @@
-ifile:///home/j/keyboards/git/endgame/things/DM_left.stepmport sys
+import sys
 import getopt
 import os
 import json
@@ -205,11 +205,11 @@ shape_config = {
     'left_wall_lower_x_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_y_offset': 0,  # specific values for the lower left corner.
     'left_wall_lower_z_offset': 0,
-    'wall_thickness':  2.5,  # wall thickness parameter used on upper/mid stage of the wall
-    'wall_base_y_thickness':  2.5,  # wall thickness at the lower stage
-    'wall_base_x_thickness':  2.5,  # wall thickness at the lower stage
+    'wall_thickness':  2,  # wall thickness parameter used on upper/mid stage of the wall
+    'wall_base_y_thickness':  2,  # wall thickness at the lower stage
+    'wall_base_x_thickness':  2,  # wall thickness at the lower stage
 
-    'wall_base_back_thickness':  2.5,  # wall thickness at the lower stage in the specifically in back for interface.
+    'wall_base_back_thickness':  2,  # wall thickness at the lower stage in the specifically in back for interface.
 
     ## Settings for column_style == :fixed
     ## The defaults roughly match Maltron settings
@@ -238,8 +238,8 @@ shape_config = {
     # 'plate_style':  'NUB',
     'plate_style': 'HOLE',
 
-    'hole_keyswitch_height':  13.8,
-    'hole_keyswitch_width':  13.8,
+    'hole_keyswitch_height':  13.95,
+    'hole_keyswitch_width':  13.95,
 
     'nub_keyswitch_height':  14.4,
     'nub_keyswitch_width':  14.4,
@@ -355,13 +355,13 @@ shape_config = {
 
     'screws_offset': 'INSIDE', # 'OUTSIDE', 'INSIDE', 'ORIGINAL'
 
-    'screw_insert_height': 1.5,
+    'screw_insert_height': 3,
 
     #'screw_insert_bottom_radius': 5.1 / 2,  #Designed for inserts
     #'screw_insert_top_radius': 4.8 / 2,  #Designed for inserts
 
-    'screw_insert_bottom_radius': 2.5 / 2,  # Designed for self tapping
-    'screw_insert_top_radius': 2.5 / 2,  # Designed for self tapping
+    'screw_insert_bottom_radius': 1.9 / 2,  # Designed for self tapping
+    'screw_insert_top_radius': 1.9 / 2,  # Designed for self tapping
 
     'screw_insert_outer_radius': 3,  # Common to keep interface to base
 
@@ -400,12 +400,12 @@ shape_config = {
     "pcb_holder_offset": [9.9, 3, 0],
 
     "pcb_usb_hole_size": [9.3, 10.0, 4.5],
-    "pcb_usb_hole_offset": [16, 0, 4.5],
+    "pcb_usb_hole_offset": [16.5, 0, 4.5],
     "pcb_usb_hole_z_offset": 2.5,
 
     "support_planck_size": [33, 7, 2],
 
-    "wall_thinner_size": [33, 5, 10],
+    "wall_thinner_size": [41, 5.5, 15],
 
     "trrs_hole_size": [3, 20],
     "trrs_offset": [0, 0, 7], #left
@@ -435,7 +435,7 @@ shape_config = {
     ###################################
     ## HOLES ON PLATE FOR PCB MOUNT
     ###################################
-    'plate_holes':  False,
+    'plate_holes':  True,
     'plate_holes_xy_offset': (0.0, 0.0),
     'plate_holes_width': 14.3,
     'plate_holes_height': 14.3,

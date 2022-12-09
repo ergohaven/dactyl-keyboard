@@ -3277,7 +3277,7 @@ def pcb_usb_hole():
         (
             pcb_usb_position[0],
             pcb_usb_position[1],
-            pcb_usb_hole_size[2] / 2 + usb_holder_thickness,
+            pcb_usb_hole_size[2] / 2 + usb_holder_thickness-1.75,
         )
     )
     return shape
@@ -3308,9 +3308,9 @@ def wall_thinner():
     shape = box(*wall_thinner_size)
     shape = translate(shape,
         (
-            pcb_holder_position[0],
-            pcb_holder_position[1] - wall_thinner_size[1]/2-1,
-            wall_thinner_size[2]/2 + pcb_holder_thickness/2,
+            pcb_holder_position[0]+1.5,
+            pcb_holder_position[1] - wall_thinner_size[1]/2,
+            wall_thinner_size[2]/2 + pcb_holder_thickness/2-3,
         )
     )
     return shape
@@ -3336,7 +3336,7 @@ def trrs_hole():
     trrs_position[1] = trrs_position[1] + trrs_offset[1]
     trrs_position[2] = trrs_position[2] + trrs_offset[2]
 
-    trrs_hole_size = [3, 20]
+    trrs_hole_size = [2.8, 20]
 
 
     shape = cylinder(*trrs_hole_size)
@@ -3345,7 +3345,7 @@ def trrs_hole():
         (
             trrs_position[0],
             trrs_position[1],
-            trrs_hole_size[0] + pcb_holder_thickness,
+            trrs_hole_size[0] + pcb_holder_thickness-1,
         )
     )
     return shape
@@ -4079,7 +4079,7 @@ def model_side(side="right"):
         s2 = difference(s2, [trrs_hole()])
         s2 = union([s2, pcb_holder()])
         s2 = difference(s2, [wall_thinner()])
-        s2 = union([s2, support_planck()])
+        #s2 = union([s2, support_planck()])
         s2 = difference(s2, pcb_screw_hole())
         s2 = difference(s2, pcb_screw_hole_cap())
 
