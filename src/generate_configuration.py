@@ -10,8 +10,8 @@ r2d = 180 / pi
 
 shape_config = {
 
-     'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
-     #'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+     #'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+     'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
 
 
     ######################
@@ -52,7 +52,7 @@ shape_config = {
     'extra_height': 0.1,  # original= 0.5
 
 
-    'web_thickness': 5,
+    'web_thickness': 4.1,
     'post_size': 0.1,
     # post_adj':  post_size / 2
     'post_adj': 0,
@@ -238,8 +238,8 @@ shape_config = {
     # 'plate_style':  'NUB',
     'plate_style': 'HOLE',
 
-    'hole_keyswitch_height':  13.95,
-    'hole_keyswitch_width':  13.95,
+    'hole_keyswitch_height':  14,
+    'hole_keyswitch_width':  14,
 
     'nub_keyswitch_height':  14.4,
     'nub_keyswitch_width':  14.4,
@@ -355,15 +355,15 @@ shape_config = {
 
     'screws_offset': 'INSIDE', # 'OUTSIDE', 'INSIDE', 'ORIGINAL'
 
-    'screw_insert_height': 3.6,
+    'screw_insert_height': 3,
 
     #'screw_insert_bottom_radius': 5.1 / 2,  #Designed for inserts
     #'screw_insert_top_radius': 4.8 / 2,  #Designed for inserts
 
-    'screw_insert_bottom_radius': 2.5 / 2,  # Designed for self tapping
-    'screw_insert_top_radius': 2.5 / 2,  # Designed for self tapping
+    'screw_insert_bottom_radius': 1.9 / 2,  # Designed for self tapping
+    'screw_insert_top_radius': 1.9 / 2,  # Designed for self tapping
 
-    'screw_insert_outer_radius': 2,  # Common to keep interface to base
+    'screw_insert_outer_radius': 3,  # Common to keep interface to base
 
     # Does anyone even use these?  I think they just get in the way.
     'wire_post_height': 7,
@@ -397,19 +397,18 @@ shape_config = {
     ###################################
     "pcb_mount_ref_offset": [0.5, -5, 0],
 
-    "pcb_holder_size": [34.6, 0.1, 3],
+     "pcb_holder_size": [34.6, 0.1, 3],
 
     "pcb_holder_offset": [9.9, 3, 0],
 
-    "pcb_usb_hole_size": [9.3, 10.0, 4.5],
-    "pcb_usb_hole_offset": [16, 0, 4.5],
+    "pcb_usb_hole_size": [9.25, 10.0, 4.5],
+    "pcb_usb_hole_offset": [16.5, 0, 45],
     "pcb_usb_hole_z_offset": 2.5,
 
     "support_planck_size": [35, 7, 2],
 
-    "wall_thinner_size": [33, 5.5, 15],
+    "wall_thinner_size": [37.6, 5.5, 15],
 
-    "trrs_hole_size": [3, 20],
     "trrs_offset": [0, 0, 7],
 
     "pcb_screw_hole_size": [.7, 5],
@@ -466,10 +465,10 @@ shape_config = {
     'column_offsets':  [
         [0, 0, 0],
         [0, 0, 0],
-        [0, 2.82, -1],
-        [0.7, 0, 1],
-        [0.7, -9, 5],# REDUCED STAGGER
-        [0.7, -9, 5],# REDUCED STAGGER
+        [0, 2.82, 0],
+        [0.7, 0, 0],
+        [0.7, -9, 3],# REDUCED STAGGER
+        [0.7, -9, 3],# REDUCED STAGGER
         [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
     ],
 

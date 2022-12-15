@@ -1,5 +1,5 @@
 {
-    "ENGINE": "solid",
+    "ENGINE": "cadquery",
     "save_dir": ".",
     "config_name": "DM",
     "show_caps": false,
@@ -24,7 +24,7 @@
     "keyboard_z_offset": 4,
     "extra_width": 1.8,
     "extra_height": 0.1,
-    "web_thickness": 5,
+    "web_thickness": 4.1,
     "post_size": 0.1,
     "post_adj": 0,
     "thumb_style": "MINIDOX",
@@ -322,8 +322,8 @@
     ],
     "fixed_tenting": 0.0,
     "plate_style": "HOLE",
-    "hole_keyswitch_height": 13.95,
-    "hole_keyswitch_width": 13.95,
+    "hole_keyswitch_height": 14,
+    "hole_keyswitch_width": 14,
     "nub_keyswitch_height": 14.4,
     "nub_keyswitch_width": 14.4,
     "undercut_keyswitch_height": 14.0,
@@ -441,10 +441,10 @@
         }
     },
     "screws_offset": "INSIDE",
-    "screw_insert_height": 3.6,
-    "screw_insert_bottom_radius": 1.25,
-    "screw_insert_top_radius": 1.25,
-    "screw_insert_outer_radius": 2,
+    "screw_insert_height": 3,
+    "screw_insert_bottom_radius": 0.95,
+    "screw_insert_top_radius": 0.95,
+    "screw_insert_outer_radius": 3,
     "wire_post_height": 7,
     "wire_post_overhang": 3.5,
     "wire_post_diameter": 2.6,
@@ -469,14 +469,14 @@
         0
     ],
     "pcb_usb_hole_size": [
-        9.3,
+        9.25,
         10.0,
         4.5
     ],
     "pcb_usb_hole_offset": [
-        16,
+        16.5,
         0,
-        4.5
+        45
     ],
     "pcb_usb_hole_z_offset": 2.5,
     "support_planck_size": [
@@ -485,13 +485,9 @@
         2
     ],
     "wall_thinner_size": [
-        33,
+        37.6,
         5.5,
         15
-    ],
-    "trrs_hole_size": [
-        3,
-        20
     ],
     "trrs_offset": [
         0,
@@ -558,22 +554,22 @@
         [
             0,
             2.82,
-            -1
+            0
         ],
         [
             0.7,
             0,
-            1
+            0
         ],
         [
             0.7,
             -9,
-            5
+            3
         ],
         [
             0.7,
             -9,
-            5
+            3
         ],
         [
             0,

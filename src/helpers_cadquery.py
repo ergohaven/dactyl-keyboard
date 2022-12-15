@@ -1,4 +1,3 @@
-import cadquery as cq
 from scipy.spatial import ConvexHull as sphull
 import numpy as np
 
