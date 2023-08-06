@@ -21,14 +21,14 @@ shape_config = {
     'save_dir': '.',
     'config_name':  "DM",
 
-    'show_caps': 'MX',
+    'show_caps': False,
     'show_pcbs': False, #only runs if caps are shown, easist place to initially inject geometry
 
     'nrows':  5, #5,  # key rows
     'ncols':  6, #6,  # key columns
 
     'alpha':  pi / 12.0,  # curvature of the columns
-    'beta':  pi / 36.0,  # curvature of the rows
+    'beta':  pi / 60.0,  # curvature of the rows
     'centercol':  3,  # controls left_right tilt / tenting (higher number is more tenting)
     'centerrow_offset':  3,  # rows from max, controls front_back tilt
     'tenting_angle':  pi / 12.0,  # or, change this for more precise tenting control
@@ -38,8 +38,8 @@ shape_config = {
 
     'column_style_gt5':  "orthographic",
     'column_style':  "standard",  # options include :standard, :orthographic, and :fixed
-    'reduced_inner_cols': 2,  #currently supports 0 or 2 due to thumb cluster attachment
-    'reduced_outer_cols': 0,
+    'reduced_inner_cols': 0,  #currently supports 0 or 2 due to thumb cluster attachment
+    'reduced_outer_cols': 2,
 
 
     'thumb_offsets':  [6, -3, 7],
@@ -48,11 +48,11 @@ shape_config = {
     ),
 
 
-    'extra_width': 2.5,  # extra space between the base of keys# original= 2
-    'extra_height': 1.0,  # original= 0.5
+    'extra_width': 1.8,  # extra space between the base of keys# original= 2
+    'extra_height': 0.1,  # original= 0.5
 
 
-    'web_thickness': 4.0 + 1.1,
+    'web_thickness': 5.1,
     'post_size': 0.1,
     # post_adj':  post_size / 2
     'post_adj': 0,
@@ -62,7 +62,7 @@ shape_config = {
     ##############################
 
     # 'DEFAULT' 6-key, 'MINI' 5-key, 'CARBONFET' 6-key, 'MINIDOX' 3-key, 'TRACKBALL_ORBYL', 'TRACKBALL_CJ'
-    'thumb_style': 'DEFAULT',
+    'thumb_style': 'MINIDOX',
     'default_1U_cluster': True, # only used with default, makes top right thumb cluster key 1U
     # Thumb key size.  May need slight oversizing, check w/ caps.  Additional spacing will be automatically added for larger keys.
     'minidox_Usize': 1.6,
@@ -94,7 +94,7 @@ shape_config = {
     'thumb_plate_bl_rotation': 0.0,  # Bottom right plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
     ##############################
     # EXPERIMENTAL
-    'separable_thumb': False,  #creates a separable thumb section with additional screws to hold it down.  Only attached at base.
+    'separable_thumb': True,  #creates a separable thumb section with additional screws to hold it down.  Only attached at base.
     ##############################
 
     ###################################
@@ -192,7 +192,7 @@ shape_config = {
     'first_1_5U_row': 0,
     'last_1_5U_row': 5,
 
-    'skeletal': False,
+    'skeletal': True,
     ##############################
 
 
@@ -238,8 +238,8 @@ shape_config = {
     # 'plate_style':  'NUB',
     'plate_style': 'NOTCH',
 
-    'hole_keyswitch_height':  14.0,
-    'hole_keyswitch_width':  14.0,
+    'hole_keyswitch_height':  13.95,
+    'hole_keyswitch_width':  13.95,
 
     'nub_keyswitch_height':  14.4,
     'nub_keyswitch_width':  14.4,
@@ -273,7 +273,7 @@ shape_config = {
     # 'SLIDING' = Features to slide the OLED in place and use a pin or block to secure from underneath.
     # 'CLIP' = Features to set the OLED in a frame a snap a bezel down to hold it in place.
 
-    'oled_mount_type':  'CLIP',
+    'oled_mount_type':  'NONE',
     'oled_center_row': 1.25, # if not None, this will override the oled_mount_location_xyz and oled_mount_rotation_xyz settings
     'oled_translation_offset': (0, 0, 4), # Z offset tweaks are expected depending on curvature and OLED mount choice.
     'oled_rotation_offset': (0, 0, 0),
@@ -383,7 +383,7 @@ shape_config = {
     # 'USB_TEENSY' = Teensy holder, no RJ9
     # 'EXTERNAL' = square cutout for a holder such as the one from lolligagger.
     # 'NONE' = No openings in the back.
-    'controller_mount_type':  'EXTERNAL',
+    'controller_mount_type':  'NONE',
 
     'external_holder_height':  12.5,
     'external_holder_width':  28.75,
@@ -429,7 +429,7 @@ shape_config = {
     ###################################
     ## HOLES ON PLATE FOR PCB MOUNT
     ###################################
-    'plate_holes':  True,
+    'plate_holes':  False,
     'plate_holes_xy_offset': (0.0, 0.0),
     'plate_holes_width': 14.3,
     'plate_holes_height': 14.3,
@@ -460,10 +460,10 @@ shape_config = {
     'column_offsets':  [
         [0, 0, 0],
         [0, 0, 0],
-        [0, 2.82, -4.5],
+        [0, 3, 0],
         [0, 0, 0],
-        [0, -6, 5],# REDUCED STAGGER
-        [0, -6, 5],# REDUCED STAGGER
+        [0, -6, 0],# REDUCED STAGGER
+        [0, -6, 0],# REDUCED STAGGER
         [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
     ],
 

@@ -47,8 +47,8 @@ try:
     print('Found Current Engine in Config = {}'.format(ENGINE))
 except Exception:
     print('Engine Not Found in Config')
-    ENGINE = 'solid'
-    # ENGINE = 'cadquery'
+    # ENGINE = 'solid'
+    ENGINE = 'cadquery'
     print('Setting Current Engine = {}'.format(ENGINE))
 
 if save_dir in ['', None, '.']:
@@ -3145,10 +3145,10 @@ def case_walls(side='right', skeleton=False):
     print('case_walls()')
     return (
         union([
-            back_wall(skeleton=skeleton),
-            left_wall(side=side, skeleton=skeleton),
-            right_wall(skeleton=skeleton),
-            front_wall(skeleton=skeleton),
+            # back_wall(skeleton=skeleton),
+            # left_wall(side=side, skeleton=skeleton),
+            # right_wall(skeleton=skeleton),
+            # front_wall(skeleton=skeleton),
             # thumb_walls(side=side),
             # thumb_connection(side=side),
         ])
@@ -3939,14 +3939,14 @@ def thumb_screw_insert(bottom_radius, top_radius, height, offset=None, side='rig
     return shapes
 
 def screw_insert_all_shapes(bottom_radius, top_radius, height, offset=0, side='right'):
-    print('screw_insert_all_shapes()')
+    print('screw_insert_all_shapes test()')
     shape = (
-        translate(screw_insert(0, 0, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
-        translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (0, left_wall_lower_y_offset, offset)),
-        translate(screw_insert(3, lastrow, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
-        translate(screw_insert(3, 0, bottom_radius, top_radius, height, side=side), (0,0, offset)),
-        translate(screw_insert(lastcol, 0, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
-        translate(screw_insert(lastcol, cornerrow, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
+        # translate(screw_insert(0, 0, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
+        # translate(screw_insert(0, cornerrow, bottom_radius, top_radius, height, side=side), (0, left_wall_lower_y_offset, offset)),
+        # translate(screw_insert(3, lastrow, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
+        # translate(screw_insert(3, 0, bottom_radius, top_radius, height, side=side), (0,0, offset)),
+        # translate(screw_insert(lastcol, 0, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
+        # translate(screw_insert(lastcol, cornerrow, bottom_radius, top_radius, height, side=side), (0, 0, offset)),
         # translate(screw_insert_thumb(bottom_radius, top_radius, height), (0, 0, offset)),
     )
 
@@ -4214,18 +4214,18 @@ def baseplate(wedge_angle=None, side='right'):
 
         shape = union([
             case_walls(side=side),
-            *screw_insert_outers(side=side),
+            # *screw_insert_outers(side=side),
             thumb_section
         ])
-        tool = screw_insert_all_shapes(screw_hole_diameter/2., screw_hole_diameter/2., 350, side=side)
-        for item in tool:
-            item = translate(item, [0, 0, -10])
-            shape = difference(shape, [item])
+        # tool = screw_insert_all_shapes(screw_hole_diameter/2., screw_hole_diameter/2., 350, side=side)
+        # for item in tool:
+        #     item = translate(item, [0, 0, -10])
+        #     shape = difference(shape, [item])
 
-        tool = thumb_screw_insert(screw_hole_diameter/2., screw_hole_diameter/2., 350, side=side)
-        for item in tool:
-            item = translate(item, [0, 0, -10])
-            shape = difference(shape, [item])
+        # tool = thumb_screw_insert(screw_hole_diameter/2., screw_hole_diameter/2., 350, side=side)
+        # for item in tool:
+        #     item = translate(item, [0, 0, -10])
+        #     shape = difference(shape, [item])
 
         #shape = union([main_shape, thumb_shape])
 
@@ -4309,47 +4309,47 @@ def run():
 
     mod_r, tmb_r = model_side(side="right")
     export_file(shape=mod_r, fname=path.join(save_path, config_name + r"_right"))
-    export_file(shape=tmb_r, fname=path.join(save_path, config_name + r"_thumb_right"))
+    # export_file(shape=tmb_r, fname=path.join(save_path, config_name + r"_thumb_right"))
 
     #base = baseplate(mod_r, tmb_r, side='right')
-    base = baseplate(side='right')
-    export_file(shape=base, fname=path.join(save_path, config_name + r"_right_plate"))
-    export_dxf(shape=base, fname=path.join(save_path, config_name + r"_right_plate"))
+    # base = baseplate(side='right')
+    # export_file(shape=base, fname=path.join(save_path, config_name + r"_right_plate"))
+    # export_dxf(shape=base, fname=path.join(save_path, config_name + r"_right_plate"))
 
-    if symmetry == "asymmetric":
-        mod_l, tmb_l = model_side(side="left")
-        export_file(shape=mod_l, fname=path.join(save_path, config_name + r"_left"))
-        export_file(shape=tmb_l, fname=path.join(save_path, config_name + r"_thumb_left"))
+    # if symmetry == "asymmetric":
+    #     mod_l, tmb_l = model_side(side="left")
+    #     export_file(shape=mod_l, fname=path.join(save_path, config_name + r"_left"))
+    #     # export_file(shape=tmb_l, fname=path.join(save_path, config_name + r"_thumb_left"))
 
         #base_l = mirror(baseplate(mod_l, tmb_l, side='left'), 'YZ')
-        base_l = mirror(baseplate(side='left'), 'YZ')
-        export_file(shape=base_l, fname=path.join(save_path, config_name + r"_left_plate"))
-        export_dxf(shape=base_l, fname=path.join(save_path, config_name + r"_left_plate"))
+        # base_l = mirror(baseplate(side='left'), 'YZ')
+        # export_file(shape=base_l, fname=path.join(save_path, config_name + r"_left_plate"))
+        # export_dxf(shape=base_l, fname=path.join(save_path, config_name + r"_left_plate"))
 
-    else:
-        export_file(shape=mirror(mod_r, 'YZ'), fname=path.join(save_path, config_name + r"_left"))
+    # else:
+        # export_file(shape=mirror(mod_r, 'YZ'), fname=path.join(save_path, config_name + r"_left"))
 
-        lbase = mirror(base, 'YZ')
-        export_file(shape=lbase, fname=path.join(save_path, config_name + r"_left_plate"))
-        export_dxf(shape=lbase, fname=path.join(save_path, config_name + r"_left_plate"))
-
-
+        # lbase = mirror(base, 'YZ')
+        # export_file(shape=lbase, fname=path.join(save_path, config_name + r"_left_plate"))
+        # export_dxf(shape=lbase, fname=path.join(save_path, config_name + r"_left_plate"))
 
 
-    if oled_mount_type == 'UNDERCUT':
-        export_file(shape=oled_undercut_mount_frame()[1], fname=path.join(save_path, config_name + r"_oled_undercut_test"))
 
-    if oled_mount_type == 'SLIDING':
-        export_file(shape=oled_sliding_mount_frame()[1], fname=path.join(save_path, config_name + r"_oled_sliding_test"))
 
-    if oled_mount_type == 'CLIP':
-        oled_mount_location_xyz = (0.0, 0.0, -oled_mount_depth / 2)
-        oled_mount_rotation_xyz = (0.0, 0.0, 0.0)
-        export_file(shape=oled_clip(), fname=path.join(save_path, config_name + r"_oled_clip"))
-        export_file(shape=oled_clip_mount_frame()[1],
-                            fname=path.join(save_path, config_name + r"_oled_clip_test"))
-        export_file(shape=union((oled_clip_mount_frame()[1], oled_clip())),
-                            fname=path.join(save_path, config_name + r"_oled_clip_assy_test"))
+    # if oled_mount_type == 'UNDERCUT':
+    #     export_file(shape=oled_undercut_mount_frame()[1], fname=path.join(save_path, config_name + r"_oled_undercut_test"))
+
+    # if oled_mount_type == 'SLIDING':
+    #     export_file(shape=oled_sliding_mount_frame()[1], fname=path.join(save_path, config_name + r"_oled_sliding_test"))
+
+    # if oled_mount_type == 'CLIP':
+    #     oled_mount_location_xyz = (0.0, 0.0, -oled_mount_depth / 2)
+    #     oled_mount_rotation_xyz = (0.0, 0.0, 0.0)
+    #     export_file(shape=oled_clip(), fname=path.join(save_path, config_name + r"_oled_clip"))
+    #     export_file(shape=oled_clip_mount_frame()[1],
+    #                         fname=path.join(save_path, config_name + r"_oled_clip_test"))
+    #     export_file(shape=union((oled_clip_mount_frame()[1], oled_clip())),
+    #                         fname=path.join(save_path, config_name + r"_oled_clip_assy_test"))
 
 # base = baseplate()
 # export_file(shape=base, fname=path.join(save_path, config_name + r"_plate"))
