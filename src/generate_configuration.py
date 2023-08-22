@@ -10,8 +10,8 @@ r2d = 180 / pi
 
 shape_config = {
 
-    'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
-    # 'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+    # 'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+    'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
 
 
     ######################
@@ -37,7 +37,7 @@ shape_config = {
     'symmetry':  "symmetric",  # "asymmetric" or "symmetric"
 
     'column_style_gt5':  "orthographic",
-    'column_style':  "standard",  # options include :standard, :orthographic, and :fixed
+    'column_style':  "fixed",  # options include :standard, :orthographic, and :fixed
     'reduced_inner_cols': 0,  #currently supports 0 or 2 due to thumb cluster attachment
     'reduced_outer_cols': 2,
 
@@ -192,7 +192,7 @@ shape_config = {
     'first_1_5U_row': 0,
     'last_1_5U_row': 5,
 
-    'skeletal': True,
+    'skeletal': False,
     ##############################
 
 
@@ -216,9 +216,11 @@ shape_config = {
     ##   http://patentimages.storage.googleapis.com/EP0219944A2/imgf0002.png
     ## fixed_z overrides the z portion of the column ofsets above.
     ## NOTE: THIS DOESN'T WORK QUITE LIKE I'D HOPED.
-    'fixed_angles':  [d2r * 10, d2r * 10, 0, 0, 0, d2r * -15, d2r * -15],
+    'fixed_angles':  [d2r * 15, 0, 0, 0, 0, d2r * -15, 0],
+    # 'fixed_angles':  [d2r * 10, d2r * 10, 0, 0, 0, d2r * -15, d2r * -15],
     'fixed_x':  [-41.5, -22.5, 0, 20.3, 41.4, 65.5, 89.6],  # relative to the middle finger
-    'fixed_z':  [12.1, 8.3, 0, 5, 10.7, 14.5, 17.5],
+    'fixed_y':  [30, 0, 0, 0, 0, 0, 0],
+    'fixed_z':  [12, 10, 10, 10, 10, 14, 10],
     'fixed_tenting':  d2r * 0,
 
     #################
@@ -246,12 +248,12 @@ shape_config = {
 
     'undercut_keyswitch_height':  14.0,
     'undercut_keyswitch_width':  14.0,
-    'notch_width': 6.0, # If using notch, it is identical to undecut, but only locally by the switch clip
+    'notch_width': 4.5, # If using notch, it is identical to undecut, but only locally by the switch clip
 
     'sa_profile_key_height':  12.7,
     'sa_length': 18.5,
     'sa_double_length': 37.5,
-    'plate_thickness':  4 + 1.1,
+    'plate_thickness':  4 + 1,
 
     'plate_rim': 1.5 + 0.5,
     # Undercut style dimensions
@@ -458,12 +460,12 @@ shape_config = {
     ####################################
 
     'column_offsets':  [
-        [0, 0, 0],
-        [0, 0, 0],
+        [0, 1, 0],
+        [0, 1, 0],
         [0, 3, 0],
         [0, 0, 0],
-        [0, -6, 0],# REDUCED STAGGER
-        [0, -6, 0],# REDUCED STAGGER
+        [0, -9, 0],# REDUCED STAGGER
+        [0, -9, 0],# REDUCED STAGGER
         [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
     ],
 

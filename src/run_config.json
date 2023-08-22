@@ -1,33 +1,33 @@
 {
-    "ENGINE": "solid",
+    "ENGINE": "cadquery",
     "save_dir": ".",
     "config_name": "DM",
-    "show_caps": "MX",
+    "show_caps": false,
     "show_pcbs": false,
     "nrows": 5,
     "ncols": 6,
     "alpha": 0.26179916666666664,
-    "beta": 0.08726638888888888,
+    "beta": 0.052359833333333335,
     "centercol": 3,
     "centerrow_offset": 3,
     "tenting_angle": 0.26179916666666664,
     "symmetry": "symmetric",
     "column_style_gt5": "orthographic",
-    "column_style": "standard",
-    "reduced_inner_cols": 2,
-    "reduced_outer_cols": 0,
+    "column_style": "fixed",
+    "reduced_inner_cols": 0,
+    "reduced_outer_cols": 2,
     "thumb_offsets": [
         6,
         -3,
         7
     ],
     "keyboard_z_offset": 11,
-    "extra_width": 2.5,
-    "extra_height": 1.0,
+    "extra_width": 1.8,
+    "extra_height": 0.1,
     "web_thickness": 5.1,
     "post_size": 0.1,
     "post_adj": 0,
-    "thumb_style": "DEFAULT",
+    "thumb_style": "MINIDOX",
     "default_1U_cluster": true,
     "minidox_Usize": 1.6,
     "mini_index_key": true,
@@ -149,7 +149,7 @@
     "thumb_plate_ml_rotation": 0.0,
     "thumb_plate_br_rotation": 0.0,
     "thumb_plate_bl_rotation": 0.0,
-    "separable_thumb": false,
+    "separable_thumb": true,
     "trackball_in_wall": false,
     "tbiw_ball_center_row": 0.2,
     "tbiw_translational_offset": [
@@ -294,13 +294,13 @@
     "wall_base_x_thickness": 4.5,
     "wall_base_back_thickness": 4.5,
     "fixed_angles": [
-        0.17453277777777776,
-        0.17453277777777776,
+        0.26179916666666664,
+        0,
         0,
         0,
         0,
         -0.26179916666666664,
-        -0.26179916666666664
+        0
     ],
     "fixed_x": [
         -41.5,
@@ -311,19 +311,28 @@
         65.5,
         89.6
     ],
-    "fixed_z": [
-        12.1,
-        8.3,
+    "fixed_y": [
+        30,
         0,
-        5,
-        10.7,
-        14.5,
-        17.5
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "fixed_z": [
+        12,
+        10,
+        10,
+        10,
+        10,
+        14,
+        10
     ],
     "fixed_tenting": 0.0,
     "plate_style": "NOTCH",
-    "hole_keyswitch_height": 14.0,
-    "hole_keyswitch_width": 14.0,
+    "hole_keyswitch_height": 13.95,
+    "hole_keyswitch_width": 13.95,
     "nub_keyswitch_height": 14.4,
     "nub_keyswitch_width": 14.4,
     "undercut_keyswitch_height": 14.0,
@@ -332,14 +341,14 @@
     "sa_profile_key_height": 12.7,
     "sa_length": 18.5,
     "sa_double_length": 37.5,
-    "plate_thickness": 5.1,
+    "plate_thickness": 5,
     "plate_rim": 2.0,
     "clip_thickness": 1.1,
     "clip_undercut": 1.0,
     "undercut_transition": 0.2,
     "plate_file": null,
     "plate_offset": 0.0,
-    "oled_mount_type": "CLIP",
+    "oled_mount_type": "NONE",
     "oled_center_row": 1.25,
     "oled_translation_offset": [
         0,
@@ -448,7 +457,7 @@
     "wire_post_height": 7,
     "wire_post_overhang": 3.5,
     "wire_post_diameter": 2.6,
-    "controller_mount_type": "EXTERNAL",
+    "controller_mount_type": "NONE",
     "external_holder_height": 12.5,
     "external_holder_width": 28.75,
     "external_holder_xoffset": -5.0,
@@ -508,7 +517,7 @@
     "base_rim_thickness": 5.0,
     "screw_cbore_diameter": 6.0,
     "screw_cbore_depth": 2.5,
-    "plate_holes": true,
+    "plate_holes": false,
     "plate_holes_xy_offset": [
         0.0,
         0.0
@@ -537,7 +546,17 @@
     "column_offsets": [
         [
             0,
+            1,
+            0
+        ],
+        [
             0,
+            1,
+            0
+        ],
+        [
+            0,
+            3,
             0
         ],
         [
@@ -547,23 +566,13 @@
         ],
         [
             0,
-            2.82,
-            -4.5
-        ],
-        [
-            0,
-            0,
+            -9,
             0
         ],
         [
             0,
-            -6,
-            5
-        ],
-        [
-            0,
-            -6,
-            5
+            -9,
+            0
         ],
         [
             0,
