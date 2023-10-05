@@ -225,13 +225,13 @@ def single_plate(cylinder_segments=100, side="right"):
                 keyswitch_height + 2 * clip_undercut,
                 mount_thickness
             )
-            undercut = union([undercut,
-                box(
-                    keyswitch_width + 2 * clip_undercut,
-                    notch_width,
-                    mount_thickness
-                )
-            ])
+            # undercut = union([undercut,
+            #   box(
+            #       keyswitch_width + 2 * clip_undercut,
+            #       notch_width,
+            #       mount_thickness
+            #   )
+            # ])
 
         undercut = translate(undercut, (0.0, 0.0, -clip_thickness + mount_thickness / 2.0))
 

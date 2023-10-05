@@ -10,8 +10,8 @@ r2d = 180 / pi
 
 shape_config = {
 
-    # 'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
-    'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+    'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+    # 'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
 
 
     ######################
@@ -38,8 +38,8 @@ shape_config = {
 
     'column_style_gt5':  "orthographic",
     'column_style':  "fixed",  # options include :standard, :orthographic, and :fixed
-    'reduced_inner_cols': 0,  #currently supports 0 or 2 due to thumb cluster attachment
-    'reduced_outer_cols': 2,
+    'reduced_inner_cols': 6,  #currently supports 0 or 2 due to thumb cluster attachment
+    'reduced_outer_cols': 0,
 
 
     'thumb_offsets':  [6, -3, 7],
@@ -216,11 +216,11 @@ shape_config = {
     ##   http://patentimages.storage.googleapis.com/EP0219944A2/imgf0002.png
     ## fixed_z overrides the z portion of the column ofsets above.
     ## NOTE: THIS DOESN'T WORK QUITE LIKE I'D HOPED.
-    'fixed_angles':  [d2r * 15, 0, 0, 0, 0, d2r * -15, 0],
+    'fixed_angles':  [d2r * 0, 0, 0, 0, 0, d2r * 0, 0],
     # 'fixed_angles':  [d2r * 10, d2r * 10, 0, 0, 0, d2r * -15, d2r * -15],
     'fixed_x':  [-41.5, -22.5, 0, 20.3, 41.4, 65.5, 89.6],  # relative to the middle finger
     'fixed_y':  [30, 0, 0, 0, 0, 0, 0],
-    'fixed_z':  [12, 10, 10, 10, 10, 14, 10],
+    'fixed_z':  [10, 10, 10, 10, 10, 10, 10],
     'fixed_tenting':  d2r * 0,
 
     #################
@@ -246,8 +246,8 @@ shape_config = {
     'nub_keyswitch_height':  14.4,
     'nub_keyswitch_width':  14.4,
 
-    'undercut_keyswitch_height':  14.0,
-    'undercut_keyswitch_width':  14.0,
+    'undercut_keyswitch_height':  13.8,
+    'undercut_keyswitch_width':  13.8,
     'notch_width': 4.5, # If using notch, it is identical to undecut, but only locally by the switch clip
 
     'sa_profile_key_height':  12.7,

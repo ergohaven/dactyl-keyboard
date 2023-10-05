@@ -1,5 +1,5 @@
 {
-    "ENGINE": "cadquery",
+    "ENGINE": "solid",
     "save_dir": ".",
     "config_name": "DM",
     "show_caps": false,
@@ -14,8 +14,8 @@
     "symmetry": "symmetric",
     "column_style_gt5": "orthographic",
     "column_style": "fixed",
-    "reduced_inner_cols": 0,
-    "reduced_outer_cols": 2,
+    "reduced_inner_cols": 6,
+    "reduced_outer_cols": 0,
     "thumb_offsets": [
         6,
         -3,
@@ -294,12 +294,12 @@
     "wall_base_x_thickness": 4.5,
     "wall_base_back_thickness": 4.5,
     "fixed_angles": [
-        0.26179916666666664,
+        0.0,
         0,
         0,
         0,
         0,
-        -0.26179916666666664,
+        0.0,
         0
     ],
     "fixed_x": [
@@ -321,12 +321,12 @@
         0
     ],
     "fixed_z": [
-        12,
         10,
         10,
         10,
         10,
-        14,
+        10,
+        10,
         10
     ],
     "fixed_tenting": 0.0,
@@ -335,9 +335,9 @@
     "hole_keyswitch_width": 13.95,
     "nub_keyswitch_height": 14.4,
     "nub_keyswitch_width": 14.4,
-    "undercut_keyswitch_height": 14.0,
-    "undercut_keyswitch_width": 14.0,
-    "notch_width": 6.0,
+    "undercut_keyswitch_height": 13.8,
+    "undercut_keyswitch_width": 13.8,
+    "notch_width": 4.5,
     "sa_profile_key_height": 12.7,
     "sa_length": 18.5,
     "sa_double_length": 37.5,
