@@ -1,5 +1,5 @@
 {
-    "ENGINE": "solid",
+    "ENGINE": "cadquery",
     "save_dir": ".",
     "config_name": "DM",
     "show_caps": false,
@@ -14,8 +14,8 @@
     "symmetry": "symmetric",
     "column_style_gt5": "orthographic",
     "column_style": "fixed",
-    "reduced_inner_cols": 6,
-    "reduced_outer_cols": 0,
+    "reduced_inner_cols": 0,
+    "reduced_outer_cols": 6,
     "thumb_offsets": [
         6,
         -3,

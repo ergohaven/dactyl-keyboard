@@ -10,8 +10,8 @@ r2d = 180 / pi
 
 shape_config = {
 
-    'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
-    # 'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+    # 'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+    'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
 
 
     ######################
@@ -38,8 +38,8 @@ shape_config = {
 
     'column_style_gt5':  "orthographic",
     'column_style':  "fixed",  # options include :standard, :orthographic, and :fixed
-    'reduced_inner_cols': 6,  #currently supports 0 or 2 due to thumb cluster attachment
-    'reduced_outer_cols': 0,
+    'reduced_inner_cols': 0,  #currently supports 0 or 2 due to thumb cluster attachment
+    'reduced_outer_cols': 6,
 
 
     'thumb_offsets':  [6, -3, 7],
