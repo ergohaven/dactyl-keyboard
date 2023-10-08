@@ -10,8 +10,8 @@ r2d = 180 / pi
 
 shape_config = {
 
-    # 'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
-    'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+    'ENGINE': 'solid',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
+    # 'ENGINE': 'cadquery',  # 'solid' = solid python / OpenSCAD, 'cadquery' = cadquery / OpenCascade
 
 
     ######################
@@ -49,7 +49,7 @@ shape_config = {
 
 
     'extra_width': 1.8,  # extra space between the base of keys# original= 2
-    'extra_height': -0.3,  # original= 0.5
+    'extra_height': 0.1,  # original= 0.5
 
 
     'web_thickness': 5.1,
@@ -219,7 +219,7 @@ shape_config = {
     'fixed_angles':  [d2r * 0, 0, 0, 0, 0, d2r * 0, 0],
     'fixed_anglesX':  [d2r * 0, 0, 0, 0, 0, d2r * 0, 0],
     # 'fixed_angles':  [d2r * 10, d2r * 10, 0, 0, 0, d2r * -15, d2r * -15],
-    'fixed_x':  [-38, -19, 0, 19, 38, 57, 89.6],  # relative to the middle finger
+    'fixed_x':  [-41.5, -22.5, 0, 20.3, 41.4, 65.5, 89.6],  # relative to the middle finger
     'fixed_y':  [30, 0, 0, 0, 0, 0, 0],
     'fixed_z':  [10, 10, 10, 10, 10, 10, 10],
     'fixed_tenting':  d2r * 0,

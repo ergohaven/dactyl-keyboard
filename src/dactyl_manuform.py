@@ -491,6 +491,7 @@ def apply_key_geometry(
 
     elif column_style == "fixed":
         shape = rotate_y_fn(shape, fixed_angles[column])
+        shape = rotate_x_fn(shape, fixed_anglesX[column])
         shape = translate_fn(shape, [fixed_x[column], 0, fixed_z[column]])
         shape = translate_fn(shape, [0, 0, -(row_radius + fixed_z[column])])
         shape = rotate_x_fn(shape, alpha * (centerrow - row))

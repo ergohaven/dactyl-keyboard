@@ -1,5 +1,5 @@
 {
-    "ENGINE": "cadquery",
+    "ENGINE": "solid",
     "save_dir": ".",
     "config_name": "DM",
     "show_caps": false,
@@ -23,7 +23,7 @@
     ],
     "keyboard_z_offset": 11,
     "extra_width": 1.8,
-    "extra_height": -0.3,
+    "extra_height": 0.1,
     "web_thickness": 5.1,
     "post_size": 0.1,
     "post_adj": 0,
@@ -312,12 +312,12 @@
         0
     ],
     "fixed_x": [
-        -38,
-        -19,
+        -41.5,
+        -22.5,
         0,
-        19,
-        38,
-        57,
+        20.3,
+        41.4,
+        65.5,
         89.6
     ],
     "fixed_y": [
